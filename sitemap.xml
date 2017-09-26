@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../../sitemap.xsl" type="text/xsl" media="all"?>
+<site>
+<page file="index.html" text="사이트 준비중" title="사이트 준비중">
+<page file="default.html" text="" title="사이트 준비중"/>
+<page file="default_001.html" text="" title="사이트 준비중"/>
+<page file="default_002.html" text="" title="사이트 준비중"/>
+<page file="default_003.html" text="" title="사이트 준비중"/>
+<page file="default_004.html" text="" title="사이트 준비중">
+<page file="default_016.html" text="공지사항 게시판입니다." title="사이트 준비중"/>
+</page>
+<page file="default_005.html" text="History" title="사이트 준비중"/>
+<page file="default_006.html" text="Directions" title="사이트 준비중"/>
+<page file="default_007.html" text="Item" title="사이트 준비중">
+<page file="default_017.html" text="" title="사이트 준비중">
+<page file="default_029.html" text="" title="사이트 준비중"/>
+</page>
+</page>
+<page file="default_008.html" text="Japan" title="사이트 준비중"/>
+<page file="default_009.html" text="LOGIN" title="사이트 준비중">
+<page file="default_018.html" text="" title="사이트 준비중"/>
+<page file="default_019.html" text="" title="사이트 준비중"/>
+</page>
+<page file="default_010.html" text="JOIN" title="사이트 준비중"/>
+<page file="default_011.html" text="SITEMAP" title="사이트 준비중">
+<page file="default_020.html" text="Collection" title="사이트 준비중"/>
+<page file="default_021.html" text="내 정보수정" title="사이트 준비중"/>
+<page file="default_022.html" text="내 쪽지함" title="사이트 준비중"/>
+<page file="default_023.html" text="1:1상담 내역" title="사이트 준비중"/>
+<page file="default_024.html" text="1:1상담 보기" title="사이트 준비중"/>
+<page file="default_025.html" text="1:1상담 쓰기" title="사이트 준비중"/>
+<page file="default_026.html" text="1:1상담 삭제" title="사이트 준비중"/>
+<page file="default_027.html" text="회원탈퇴" title="사이트 준비중"/>
+<page file="default_028.html" text="회원탈퇴 완료" title="사이트 준비중"/>
+</page>
+<page file="default_012.html" text="이용약관" title="사이트 준비중"/>
+<page file="default_013.html" text="개인정보취급방침" title="사이트 준비중"/>
+<page file="default_014.html" text="이메일주소 무단수집거부" title="사이트 준비중"/>
+</page>
+</site>

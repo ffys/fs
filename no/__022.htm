@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>사이트 준비중</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="" />
+<!-- DEFAULT HEAD AREA : 빌더 기본 정보입니다. 해당 내용 삭제 시 문제가 발생할 수 있습니다. -->
+
+			<link href='/tpl/common.css?v=201510200000' type='text/css' rel='stylesheet' />
+			<link href='/common/js/jquery/theme/jquery.theme.css?v=201510200000' type='text/css' rel='stylesheet' />
+			<script type='text/javascript' src='/common/js/sky.rama.js?v=201510200000'></script>
+			<script type='text/javascript' src='/common/js/jquery/jquery.custom.js?v=201510200000'></script>
+			<script type='text/javascript' src='/common/js/i18n/jquery.i18n.properties-min-1.0.9.js?v=201510200000'></script>
+			<script type='text/javascript' src='/?act=common.set_langvar&v=201510200000'></script>
+			<script type='text/javascript' src='/common/js/durian.common.js?v=201510200000'></script>
+			<script type='text/javascript' src='/common/js/jquery/jquery-ui.custom.min.js?v=201510200000'></script>
+			<!-- /DEFAULT HEAD AREA -->
+<!-- user common css -->
+<link href="/data/tpl/common.css?v=201510200000" type="text/css" rel="stylesheet">
+<!-- /user common css -->
+<!-- user js -->
+<script type="text/javascript" src="/data/tpl/common.js?v=201510200000"></script>
+<!-- /user js --> 
+<style type="text/css">
+    #sub_visual {width:100%; height:210px; text-align:center; background:#6a6a6c;}
+    #container { width:1000px; margin:25px auto 50px; *zoom:1px;}
+    #container:after {content:'';display:block;clear:both;}
+</style>
+</head>
+
+<body style="background-color:#FFFFFF; ">
+<div id="wrap">
+	<!--[[AREA_TOP_START]]-->
+	<div id="header">
+		<div>
+			<h1 id="logo"><!--L_SITE_LOGO[[[--><div id="L_SITE_LOGO">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr>
+		<td align="center" height="70">
+							<a href="/?act=main"><img src="/data/file/logo.gif" border="0" ></a>
+					</td>
+	</tr>
+</table>
+</div><!--L_SITE_LOGO]]]--></h1>			
+			<div id="topmenu"><!--L_TOP_MENU[[[--><style type="text/css">
+    #navi { position:relative; width:980px; height:50px; text-align:left; top:40px; left:90px;}
+	.navi_main { float:right; height:17px; position:relative; top:0px; right:0;}
+	.navi_main li { float:left; margin-left:100px;}
+    .navi_sub { display:block; position:absolute; top:24px; height:30px;}
+	.navi_sub_1 { left:24px; }
+	.navi_sub_2 { left:254px; }
+	.navi_sub_3 { left:720px; }
+	.navi_sub_4 { right:-30px; }
+    .navi_sub_menu { background:#fa6161; margin-top:5px; }
+    .navi_sub_menu li { float:left; height:25px; line-height:25px; padding-left:10px; padding-right:10px;/* background:#fa6161;*/ }
+    .navi_sub_menu li a { color:#888; font-size:11px;}
+	.navi_sub_menu li a:hover { text-decoration:none; color:#fff; }
+</style>
+<script type="text/javascript">
+
+var _varCurrentAct = 'user.user_login//';
+
+jQuery(document).ready(function(){
+	jQuery('#navi .navi_main .navi_main_obj').each(function(){	
+		if(!jQuery(this).attr('orgsrc')) {
+			jQuery(this).attr('orgsrc', jQuery(this).attr('src'));
+		}
+
+		jQuery(this).hover(function(){
+			_fcNaviControl(jQuery(this).attr('subcode'));
+		});
+	});
+
+	var curSubCode = _fcNaviControlMap[_varCurrentAct];
+
+	if( curSubCode ) {
+		_fcNaviControl(curSubCode);
+	}
+});
+
+/**************************************************
+*
+* # 상단메뉴 매칭 정보(URL 매개변수 사용)
+*
+* 구성: 'act / pcode / bbs_code':'subcode 번호'
+*
+**************************************************/
+var _fcNaviControlMap = {
+	'info.page/greeting/'	                                    : '',
+	'info.page/sub0102/'	                                    : '',
+	'info.page/map/'	                                    : '',
+	'info.page/curriculum/'	                                        : '',
+	'info.page/teacher/'                                        : '',	
+	'board//webzine'		                                        : '',
+	'board//notice'		                                        : '',
+	'board//faq'		                                        : '',
+	'mypage.my_qna/list/'                                        : ''
+};
+
+var _fcNaviControl = function(selCode) {
+
+	if(!selCode) return;
+
+	jQuery('#navi .navi_main .navi_main_obj').each(function(){
+		jQuery('#navi .navi_sub_'+jQuery(this).attr('subcode')).hide();
+		jQuery(this).attr('src', jQuery(this).attr('orgsrc'));
+		
+	});
+	
+	jQuery('#navi .navi_main .navi_main_obj[subcode='+selCode+']').attr('src', jQuery('#navi .navi_main .navi_main_obj[subcode='+selCode+']').attr('oversrc'));
+	jQuery('#navi .navi_sub_'+selCode).show();
+
+};
+</script>
+
+<div id="navi">
+	<ul class="navi_main">
+		<li>
+            <a href="/?act=info.page&pcode=greeting"><img src="../images/navi_1.gif" oversrc="../images/navi_1_on.gif" alt="COMPANY" class='navi_main_obj' subcode='1' /></a>
+        </li>
+		<li>
+            <a href="/?act=shop.goods_list&GC=GD0000"><img src="../images/navi_2.gif" oversrc="../images/navi_2_on.gif" alt="PRODUCT" class='navi_main_obj' subcode='2' /></a>
+        </li>
+        <li style="margin-left:390px;">
+            <a href="/?act=gallery.page&pcode=sub0301"><img src="../images/navi_3.gif" oversrc="../images/navi_3_on.gif" alt="SHOP" class='navi_main_obj' subcode='3' /></a>
+        </li>
+		<li>
+            <a href="/?act=board&bbs_code=notice"><img src="../images/navi_4.gif" oversrc="../images/navi_4_on.gif" alt="COMMUNITY" class='navi_main_obj' subcode='4' /></a>
+        </li>
+	</ul>
+
+	<div class="navi_sub_1 navi_sub" style='display:none;'>
+		<ul class="navi_sub_menu">
+			<li><a href="/?act=info.page&pcode=greeting">About Company</a></li>
+			<li><a href="/?act=info.page&pcode=sub0102">History</a></li> 
+			<li><a href="/?act=info.page&pcode=map">Directions</a></li>
+		</ul>
+	</div>
+
+	<div class="navi_sub_2 navi_sub" style='display:none;'>
+        <ul class="navi_sub_menu">
+			<li><a href="/?act=shop.goods_list&GC=GD0000">Collection</a></li>
+			<li><a href="/?act=board&bbs_code=sub0202">Item</a></li>
+		</ul>
+    </div>
+
+	<div class="navi_sub_3 navi_sub" style='display:none;'>
+		<ul class="navi_sub_menu">
+            <li><a href="?act=gallery.page&pcode=sub0301">Korea</a></li>
+            <li><a href="?act=gallery.page&pcode=sub0302">Japan</a></li>
+		</ul>
+	</div>
+
+	<div class="navi_sub_4 navi_sub" style='display:none;'>
+		<ul class="navi_sub_menu">
+			<li><a href="/?act=board&bbs_code=notice">Notice</a></li>
+			<li><a href="/?act=gallery.page&pcode=sub0402">Photo Gallery</a></li>
+		</ul>
+	</div>
+</div>
+<!--//네비--><!--L_TOP_MENU]]]--></div>
+			<div id="login"><!--L_TOP_GNB[[[--><ul>
+	<li><a href="/">HOME</a></li>	
+	<li><a href="/?act=user.user_login">LOGIN</a></li> 	
+	<li><a href="/?act=user.user_join_agree">JOIN</a></li> 
+	
+	<li><a href="/?act=info.sitemap">SITEMAP</a></li>
+</ul><!--L_TOP_GNB]]]--></div>
+		</div>
+	</div>
+	<div id="sub_visual">
+		<img src="/images/kor03-15-0266/sub/sub_img_01.jpg" alt="sub visual" />
+	</div>
+	<!--[[AREA_TOP_END]]-->
+
+	<!--[[AREA_BODY_START]]-->
+	<div id="container"><!--BODY[[[--><style type="text/css">
+.contents { width:100%; margin:0 auto; margin-bottom:50px;}
+.contents .con_title {height:58px; overflow:hidden; margin-bottom:10px; vertical-align:top; border-bottom:none;}
+.contents .con_title h3 {float:left;}
+.contents .con_title p {float:right; margin-right:0;}
+.loginDiv {border-top:1px solid #7f7f7f; border-bottom:1px solid #7f7f7f; overflow:hidden;}
+.loginDiv .left{width:302px; float:left;}
+.loginDiv .left img{ vertical-align:middle;}
+.loginDiv .right{width:111px; float:right;}
+.loginDiv .loginform {width:413px; height:61px; margin:34px auto;}
+.loginTxt {padding:14px 18px; border:1px solid #dfdfdf; background:#f5f5f5; vertical-align:middle; overflow:hidden;}
+.loginTxt .left{width:510px; float:left; padding:5px 0 0 10px; background:url("/images/basic_blue/join/bullet_dot_gray.gif") no-repeat 3px 10px;}
+.loginTxt .right{width:137px; float:right;}
+.pBox{position:relative; width:100%; overflow:hidden;}
+.inp_01 {width:224px; height:24px !important; border:1px solid #dfdfdf; }
+input.loginbtn{height:61px; padding:0px; border:none; vertical-align:middle}
+
+/* 간격 */
+.mt3{margin-top:3px;}
+.mt5{margin-top:5px;}
+.mt26 {margin-top:26px;}
+.mt35 {margin-top:35px;}
+.mt40 {margin-top:40px;}
+.mt50 {margin-top:50px;}
+.mb50 {margin-bottom:50px;}
+.pr10 {padding-right:10px}
+.pb16 {padding-bottom:16px}
+
+/* 정렬 */
+.taC {text-align:center;}
+.taR {text-align:right;}
+</style>
+
+<script type="text/javascript" src="/common/js/sky.form.checker.js?v=201510200000"></script>
+<script type="text/javascript">
+	var guest = '0';
+
+	function init()
+	{
+		$l($('user_login'), 'click', onUserSubmit);
+		$l(document.forms['form_user_login'], 'submit', onUserSubmit);
+		
+		if(document.forms['form_user_login'].elements['user_id'].value) {
+			document.forms['form_user_login'].elements['user_passwd'].focus();
+		} else {
+			document.forms['form_user_login'].elements['user_id'].focus();
+		}
+	}
+
+	$load(init);
+
+
+	function onUserSubmit(evt, obj)
+	{
+		Event.stop(evt);
+		var form = document.forms['form_user_login'];
+
+		if (!form.elements['user_id'].value) {
+			Durian.alertCloseFocusObject = form.user_id;
+			Durian.alert('아이디를 입력해주십시오.');
+			return false;
+		}
+		if (!form.elements['user_passwd'].value) {
+			Durian.alertCloseFocusObject = form.user_passwd;
+			Durian.alert('비밀번호를 입력해주십시오.');
+			return false;
+		}
+
+		Event.delListener(fc_form_user_login.form, 'submit', fc_form_user_login.onCheck);
+fc_form_user_login.doSubmit();
+	}
+</script>
+
+
+<form name="form_user_login" method="POST" action="/">
+<input type="hidden" name="act" value="user.user_login_act">
+<input type="hidden" name="reurl" value="/?act=mypage.user_info_modify">
+
+<div class="contents">
+	<div class="con_title">
+		<h3><img src="/images/basic_blue/join/title_login.gif" alt="회원 로그인" /></h3>
+		<p class="mt35 taR">Home &gt; <strong>로그인</strong></p>
+	</div>	
+		  
+	<div class="loginDiv">
+		<p class="taC mt50"><img src="/images/basic_blue/join/title_memberlogin.gif" alt="member logiin" /></p>
+		<div class="loginform pb16">
+			<div class="left">
+				<p style="white-space:nowrap;">
+					<img src="/images/basic_blue/join/id.gif" alt="아이디" class="pr10" />
+					<input type="text" id="" name="user_id"  title="" class="inp_01" />
+				</p>
+				<p class="mt5" style="white-space:nowrap;">
+					<img src="/images/basic_blue/join/pw.gif" alt="비밀번호" class="pr10" />
+					<input type="password" id="" name="user_passwd"  title="" class="inp_01" />
+				</p>
+			</div>
+			<div class="right">
+				<input name="image" class='loginbtn' type="image" src="/images/basic_blue/join/btn_login.gif" id="user_login" alt="로그인" >
+			</div>			
+		</div><!--//lgoinform -->
+	</div><!--//loginDiv -->
+
+	<div class="loginTxt mt26">
+		<ul>
+			<li>
+				<div class="pBox">
+					<div class="left"> 아직 회원이 아니세요?  회원가입을 하시면 보다 많은 혜택이 있습니다.</div>
+					<div class="right"><a href="?act=user.user_join_agree"><img src="/images/basic_blue/join/btn_memberjoin.gif" alt="회원가입하기"></a></div>
+				</div>
+			</li>
+			<li class="mt5">
+				<div class="pBox">
+					<div class="left"> 아이디가 기억나지 않으세요?  '아이디 찾기'를 해주세요.</div>
+					<div class="right"><a href="?act=user.user_find_id"><img src="/images/basic_blue/join/btn_idfind.gif" alt="아이디찾기"></a></div>
+				</div>
+			</li>
+			<li class="mt5">
+				<div class="pBox">
+					<div class="left"> 비밀번호가 기억나지 않으세요?  '비밀번호 찾기'를 해주세요.</div>
+					<div class="right"><a href="?act=user.user_find_pw"><img src="/images/basic_blue/join/btn_pwfind.gif" alt="비밀번호찾기"></a></div>
+				</div>
+			</li>
+		</ul>
+	</div><!--//loginTxt -->
+
+</div><!--//contents -->
+</form>
+<!--BODY]]]--></div>	
+	<!--[[AREA_BODY_END]]-->
+
+	<!--[[AREA_BOTTOM_START]]-->
+	<div id="footer"><!--L_FOOTER[[[--><style type="text/css">
+.footer_area { width:980px; margin:0 auto; }
+.footer_area:after { content:""; display:block; clear:both; }
+.footer_logo { float:left; width:211px; }
+.footer_info { float:right;}
+
+.footer_info ul { float:right; height:25px; }
+.footer_info li { display:inline; background:url(/images/footer_menu_line.gif) left center no-repeat; padding:0 5px; }
+.footer_info li:first-child { background:none; padding-left:0px; }
+.footer_info li:last-child { padding-right:0px; }
+.footer_info .address { clear:both; text-align:right; }
+.footer_info .copyright { padding-top:5px; font-size:10px; }
+</style>
+
+<div class="footer_area">	
+	<div class="footer_logo"><img src="/images/logo.png" alt="하단로고" /></div>
+	<div class="footer_info">
+		<ul>
+			<li><a href="/?act=info.provision">이용약관</a></li>			
+			<li><a href="/?act=info.privacy">개인정보취급방침</a></li>				
+			<li><a href="/?act=info.no_email_collect">이메일주소 무단수집거부</a></li>			
+			<li><a href="/?act=info.page&pcode=map">오시는길</a></li>	
+		</ul>
+		<div class="address">
+			(우: 08378) 서울특별시 구로구 디지털로34길 43(구로동, 코오롱싸이언스밸리1차)  | 대표: 홍길동<br>			
+            사업자등록번호: 110-81-41272 | TEL: 02-1234-5678 | H.P : 010-1234-5678 | FAX: 02-1234-5679 | E-mail: dream@whois.co.kr			<p class="copyright">COPYRIGHT &copy; <strong>(주) 후이즈드림</strong>.  ALL RIGHTS RESERVED.</p>
+		</div>		
+	</div>	
+</div><!--L_FOOTER]]]--></div>
+	<!--[[AREA_BOTTOM_END]]-->
+</div>
+</body>
+</html>
+<script type="text/javascript" src="/ssl/library/js/aes.js"></script><script type="text/javascript" src="/ssl/library/js/rsa.js"></script><script type="text/javascript" src="/ssl/library/js/WMSSL.js"></script><script type="text/javascript" src="/ssl/library/js/WMSSL_EXTEND.js"></script><script type="text/javascript">$load(function() {	WMSSL.connect("/ssl/server.php");	WMSSL.extend.loading();});</script><script type="text/javascript"> var fc_form_user_login; var fc_form_user_login_data = {}; function init_form_user_login() { var fc = fc_form_user_login = new Form.Checker({ 'form' : 'form_user_login' }); fc.form.useSSL = true; if (typeof init_form_user_login_callback == 'function') { init_form_user_login_callback(fc, fc_form_user_login_data); } } $load(init_form_user_login); </script><div style="display:none;"><!--
+---------------------------
+ START 2017-09-25 15:46:31
+ INIT            : 0.01324
+ EXEC            : 0.01223
+ LAYOUT          : 0.00796
+ END             : 0.00901
+---------------------------
+ TOTAL           : 0.04244
+---------------------------
+--></div>

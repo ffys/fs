@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>사이트 준비중</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="../no/__022.htm">
+    <!-- DEFAULT HEAD AREA : 빌더 기본 정보입니다. 해당 내용 삭제 시 문제가 발생할 수 있습니다. -->
+
+    <link href="../css/common.css" type="text/css" rel="stylesheet">
+    <link href="../css/jquery.theme.css" type="text/css" rel="stylesheet">
+
+    <script type="text/javascript" src="../js/jquery.custom.js"></script>
+    <script type="text/javascript" src="../js/jquery.i18n.properties-min-1.0.9.js"></script>
+
+    <script type="text/javascript" src="../js/durian.common.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.custom.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <!-- /DEFAULT HEAD AREA -->
+    <!-- user common css -->
+    <link href="../css/common_001.css" type="text/css" rel="stylesheet">
+    <!-- /user common css -->
+
+    <style type="text/css">
+        /* Code tidied up by ScrapBook */
+        #sub_visual {
+            width: 100%;
+            height: 210px;
+            text-align: center;
+            background: rgb(106, 106, 108) none repeat scroll 0% 0%;
+        }
+
+        #container {
+            width: 1000px;
+            margin: 25px auto 50px;
+        }
+
+        #container::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(255, 255, 255);">
+<div id="wrap">
+    <!--[[AREA_TOP_START]]-->
+    <div id="header">
+        <div>
+            <h1 id="logo"><!--L_SITE_LOGO[[[-->
+                <div id="L_SITE_LOGO">
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                        <tr>
+                            <td height="70" align="center">
+                                <a href="../index.html"><img src="../images/logo.png" border="0"></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div><!--L_SITE_LOGO]]]--></h1>
+            <div id="topmenu">
+                <script type="text/javascript">
+
+                    var _varCurrentAct = 'user.user_login//';
+
+                    jQuery(document).ready(function () {
+                        jQuery('#navi .navi_main .navi_main_obj').each(function () {
+                            if (!jQuery(this).attr('orgsrc')) {
+                                jQuery(this).attr('orgsrc', jQuery(this).attr('src'));
+                            }
+
+                            jQuery(this).hover(function () {
+                                _fcNaviControl(jQuery(this).attr('subcode'));
+                            });
+                        });
+
+                        var curSubCode = _fcNaviControlMap[_varCurrentAct];
+
+                        if (curSubCode) {
+                            _fcNaviControl(curSubCode);
+                        }
+                    });
+
+                    /**************************************************
+                     *
+                     * # 상단메뉴 매칭 정보(URL 매개변수 사용)
+                     *
+                     * 구성: 'act / pcode / bbs_code':'subcode 번호'
+                     *
+                     **************************************************/
+                    var _fcNaviControlMap = {
+                        'info.page/greeting/': '',
+                        'info.page/sub0102/': '',
+                        'info.page/map/': '',
+                        'info.page/curriculum/': '',
+                        'info.page/teacher/': '',
+                        'board//webzine': '',
+                        'board//notice': '',
+                        'board//faq': '',
+                        'mypage.my_qna/list/': ''
+                    };
+
+                    var _fcNaviControl = function (selCode) {
+
+                        if (!selCode) return;
+
+                        jQuery('#navi .navi_main .navi_main_obj').each(function () {
+                            jQuery('#navi .navi_sub_' + jQuery(this).attr('subcode')).hide();
+                            jQuery(this).attr('src', jQuery(this).attr('orgsrc'));
+
+                        });
+
+                        jQuery('#navi .navi_main .navi_main_obj[subcode=' + selCode + ']').attr('src', jQuery('#navi .navi_main .navi_main_obj[subcode=' + selCode + ']').attr('oversrc'));
+                        jQuery('#navi .navi_sub_' + selCode).show();
+
+                    };
+                </script>
+
+                <div id="navi">
+                    <ul class="navi_main">
+                        <li>
+                            <a href="about.html"><img src="../images/navi_1.gif" oversrc="../images/navi_1_on.gif"
+                                                      alt="COMPANY" class="navi_main_obj" subcode="1"></a>
+                        </li>
+                        <li>
+                            <a href="product.html"><img src="../images/navi_2.gif" oversrc="../images/navi_2_on.gif"
+                                                        alt="PRODUCT" class="navi_main_obj" subcode="2"></a>
+                        </li>
+                        <li style="margin-left: 390px;">
+                            <a href="request.html"><img src="../images/navi_3.gif" oversrc="../images/navi_3_on.gif"
+                                                        alt="SHOP" class="navi_main_obj" subcode="3"></a>
+                        </li>
+                        <li>
+                            <a href="contact.html"><img src="../images/navi_4.gif" oversrc="../images/navi_4_on.gif"
+                                                        alt="COMMUNITY" class="navi_main_obj" subcode="4"></a>
+                        </li>
+                    </ul>
+
+                    <div class="navi_sub_1 navi_sub" style="display: none;">
+
+                    </div>
+
+                    <div class="navi_sub_2 navi_sub" style="display: none;">
+                        <ul class="navi_sub_menu">
+                            <li><a href="product.html">Collection</a></li>
+                            <li><a href="default_007.html">Item</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="navi_sub_3 navi_sub" style="display: none;">
+                        <ul class="navi_sub_menu">
+                            <li><a href="request.html">NOTICE</a></li>
+                            <li><a href="default_008.html">Q&A</a></li>
+                        </ul>
+                    </div>
+
+                    <!--<div class="navi_sub_4 navi_sub" style="display: none;">		<ul class="navi_sub_menu">			<li><a href="#">Notice</a></li>			<li><a href="default_008.html">Photo Gallery</a></li>		</ul>	</div>-->
+                </div>
+                <!--//네비--><!--L_TOP_MENU]]]--></div>
+            <div id="login"><!--L_TOP_GNB[[[-->
+                <ul>
+                   <li><a href="../index.html">HOME</a></li>
+
+
+                    <li><a href="default_011.html">SITEMAP</a></li>
+                </ul><!--L_TOP_GNB]]]--></div>
+        </div>
+    </div>
+    <div id="sub_visual">
+        <img src="../images/sub_img_01.jpg" alt="sub visual">
+    </div>
+    <!--[[AREA_TOP_END]]-->
+
+    <!--[[AREA_BODY_START]]-->
+    <div id="container"><!--BODY[[[-->
+        <style type="text/css">
+            /* Code tidied up by ScrapBook */
+            .contents {
+                width: 100%;
+                margin: 0px auto 50px;
+            }
+
+            .contents .con_title {
+                height: 58px;
+                overflow: hidden;
+                margin-bottom: 10px;
+                vertical-align: top;
+                border-bottom: medium none;
+            }
+
+            .contents .con_title h3 {
+                float: left;
+            }
+
+            .contents .con_title p {
+                float: right;
+                margin-right: 0px;
+            }
+
+            .loginDiv {
+                border-top: 1px solid rgb(127, 127, 127);
+                border-bottom: 1px solid rgb(127, 127, 127);
+                overflow: hidden;
+            }
+
+            .loginDiv .left {
+                width: 302px;
+                float: left;
+            }
+
+            .loginDiv .left img {
+                vertical-align: middle;
+            }
+
+            .loginDiv .right {
+                width: 111px;
+                float: right;
+            }
+
+            .loginDiv .loginform {
+                width: 413px;
+                height: 61px;
+                margin: 34px auto;
+            }
+
+            .loginTxt {
+                padding: 14px 18px;
+                border: 1px solid rgb(223, 223, 223);
+                background: rgb(245, 245, 245) none repeat scroll 0% 0%;
+                vertical-align: middle;
+                overflow: hidden;
+            }
+
+            .loginTxt .left {
+                width: 510px;
+                float: left;
+                padding: 5px 0px 0px 10px;
+                background: rgba(0, 0, 0, 0) url("../images/bullet_dot_gray.gif") no-repeat scroll 3px 10px;
+            }
+
+            .loginTxt .right {
+                width: 137px;
+                float: right;
+            }
+
+            .pBox {
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .inp_01 {
+                width: 224px;
+                height: 24px !important;
+                border: 1px solid rgb(223, 223, 223);
+            }
+
+            input.loginbtn {
+                height: 61px;
+                padding: 0px;
+                border: medium none;
+                vertical-align: middle;
+            }
+
+            .mt3 {
+                margin-top: 3px;
+            }
+
+            .mt5 {
+                margin-top: 5px;
+            }
+
+            .mt26 {
+                margin-top: 26px;
+            }
+
+            .mt35 {
+                margin-top: 35px;
+            }
+
+            .mt40 {
+                margin-top: 40px;
+            }
+
+            .mt50 {
+                margin-top: 50px;
+            }
+
+            .mb50 {
+                margin-bottom: 50px;
+            }
+
+            .pr10 {
+                padding-right: 10px;
+            }
+
+            .pb16 {
+                padding-bottom: 16px;
+            }
+
+            .taC {
+                text-align: center;
+            }
+
+            .taR {
+                text-align: right;
+            }
+        </style>
+
+        <script type="text/javascript" src="../js/sky.form.checker_001.js"></script>
+        <script type="text/javascript">
+            var guest = '0';
+
+            function init() {
+                $l($('user_login'), 'click', onUserSubmit);
+                $l(document.forms['form_user_login'], 'submit', onUserSubmit);
+
+                if (document.forms['form_user_login'].elements['user_id'].value) {
+                    document.forms['form_user_login'].elements['user_passwd'].focus();
+                } else {
+                    document.forms['form_user_login'].elements['user_id'].focus();
+                }
+            }
+
+            $load(init);
+
+
+            function onUserSubmit(evt, obj) {
+                Event.stop(evt);
+                var form = document.forms['form_user_login'];
+
+                if (!form.elements['user_id'].value) {
+                    Durian.alertCloseFocusObject = form.user_id;
+                    Durian.alert('아이디를 입력해주십시오.');
+                    return false;
+                }
+                if (!form.elements['user_passwd'].value) {
+                    Durian.alertCloseFocusObject = form.user_passwd;
+                    Durian.alert('비밀번호를 입력해주십시오.');
+                    return false;
+                }
+
+                Event.delListener(fc_form_user_login.form, 'submit', fc_form_user_login.onCheck);
+                fc_form_user_login.doSubmit();
+            }
+        </script>
+
+
+        <form name="form_user_login" method="POST" action="http://kor03-15-0266.whoisgh.com/">
+            <input name="act" value="user.user_login_act" type="hidden">
+            <input name="reurl" value="/?act=mypage.user_info_modify" type="hidden">
+
+            <div class="contents">
+                <div class="con_title">
+                    <h3><img src="../images/title_login.gif" alt="회원 로그인"></h3>
+                    <p class="mt35 taR">Home &gt; <strong>로그인</strong></p>
+                </div>
+
+                <div class="loginDiv">
+                    <p class="taC mt50"><img src="../images/title_memberlogin.gif" alt="member logiin"></p>
+                    <div class="loginform pb16">
+                        <div class="left">
+                            <p style="white-space: nowrap;">
+                                <img src="../images/id.gif" alt="아이디" class="pr10">
+                                <input id="" name="user_id" title="" class="inp_01" type="text">
+                            </p>
+                            <p class="mt5" style="white-space: nowrap;">
+                                <img src="../images/pw.gif" alt="비밀번호" class="pr10">
+                                <input id="" name="user_passwd" title="" class="inp_01" type="password">
+                            </p>
+                        </div>
+                        <div class="right">
+                            <input name="image" class="loginbtn" src="../images/btn/btn_login.gif" id="user_login"
+                                   alt="로그인" type="image">
+                        </div>
+                    </div><!--//lgoinform -->
+                </div><!--//loginDiv -->
+
+                <div class="loginTxt mt26">
+                    <ul>
+                        <li>
+                            <div class="pBox">
+                                <div class="left"> 아직 회원이 아니세요? 회원가입을 하시면 보다 많은 혜택이 있습니다.</div>
+                                <div class="right"><a href="default_010.html"><img
+                                        src="../images/btn/btn_memberjoin.gif" alt="회원가입하기"></a></div>
+                            </div>
+                        </li>
+                        <li class="mt5">
+                            <div class="pBox">
+                                <div class="left"> 아이디가 기억나지 않으세요? '아이디 찾기'를 해주세요.</div>
+                                <div class="right"><a href="default_018.html"><img src="../images/btn/btn_idfind.gif"
+                                                                                   alt="아이디찾기"></a></div>
+                            </div>
+                        </li>
+                        <li class="mt5">
+                            <div class="pBox">
+                                <div class="left"> 비밀번호가 기억나지 않으세요? '비밀번호 찾기'를 해주세요.</div>
+                                <div class="right"><a href="default_019.html"><img src="../images/btn/btn_pwfind.gif"
+                                                                                   alt="비밀번호찾기"></a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div><!--//loginTxt -->
+
+            </div><!--//contents -->
+        </form>
+        <!--BODY]]]--></div>
+    <!--[[AREA_BODY_END]]-->
+
+    <!--[[AREA_BOTTOM_START]]-->
+    <div id="footer"><!--L_FOOTER[[[-->
+
+        <div class="footer_area">
+            <div class="footer_logo"><img src="../images/logo.png" alt="하단로고"></div>
+            <div class="footer_info">
+                <ul>
+                    <li><a href="default_012.html">이용약관</a></li>
+                    <li><a href="default_013.html">개인정보취급방침</a></li>
+                    <li><a href="default_014.html">이메일주소 무단수집거부</a></li>
+                    <li><a href="default_006.html">오시는길</a></li>
+                </ul>
+                <div class="address">
+                    (우: 08378) 서울특별시 구로구 디지털로34길 43(구로동, 코오롱싸이언스밸리1차) | 대표: 홍길동<br>
+                    사업자등록번호: 110-81-41272 | TEL: 02-1234-5678 | H.P : 010-1234-5678 | FAX: 02-1234-5679 | E-mail:
+                    dream@whois.co.kr <p class="copyright">COPYRIGHT © <strong>(주) 후이즈드림</strong>. ALL RIGHTS RESERVED.
+                </p>
+                </div>
+            </div>
+        </div><!--L_FOOTER]]]--></div>
+    <!--[[AREA_BOTTOM_END]]-->
+</div>
+
+
+<script type="text/javascript" src="../js/aes.js"></script>
+<script type="text/javascript" src="../js/rsa.js"></script>
+<script type="text/javascript" src="../js/WMSSL.js"></script>
+<script type="text/javascript" src="../js/WMSSL_EXTEND.js"></script>
+<script type="text/javascript">$load(function () {
+    WMSSL.connect("/ssl/server.php");
+    WMSSL.extend.loading();
+});</script>
+<script type="text/javascript"> var fc_form_user_login;
+var fc_form_user_login_data = {};
+function init_form_user_login() {
+    var fc = fc_form_user_login = new Form.Checker({'form': 'form_user_login'});
+    fc.form.useSSL = true;
+    if (typeof init_form_user_login_callback == 'function') {
+        init_form_user_login_callback(fc, fc_form_user_login_data);
+    }
+}
+$load(init_form_user_login); </script>
+<div style="display: none;"><!--
+---------------------------
+ START 2017-09-25 15:46:31
+ INIT            : 0.01134
+ EXEC            : 0.01025
+ LAYOUT          : 0.00741
+ END             : 0.00867
+---------------------------
+ TOTAL           : 0.03767
+---------------------------
+--></div>
+
+</body>
+</html>

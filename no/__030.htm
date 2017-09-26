@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>사이트 준비중</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="" />
+<!-- DEFAULT HEAD AREA : 빌더 기본 정보입니다. 해당 내용 삭제 시 문제가 발생할 수 있습니다. -->
+
+			<link href='/tpl/common.css?v=201510200000' type='text/css' rel='stylesheet' />
+			<link href='/common/js/jquery/theme/jquery.theme.css?v=201510200000' type='text/css' rel='stylesheet' />
+			<script type='text/javascript' src='/common/js/sky.rama.js?v=201510200000'></script>
+			<script type='text/javascript' src='/common/js/jquery/jquery.custom.js?v=201510200000'></script>
+			<script type='text/javascript' src='/common/js/i18n/jquery.i18n.properties-min-1.0.9.js?v=201510200000'></script>
+			<script type='text/javascript' src='/?act=common.set_langvar&v=201510200000'></script>
+			<script type='text/javascript' src='/common/js/durian.common.js?v=201510200000'></script>
+			<script type='text/javascript' src='/common/js/jquery/jquery-ui.custom.min.js?v=201510200000'></script>
+			<!-- /DEFAULT HEAD AREA -->
+<!-- user common css -->
+<link href="/data/tpl/common.css?v=201510200000" type="text/css" rel="stylesheet">
+<!-- /user common css -->
+<!-- user js -->
+<script type="text/javascript" src="/data/tpl/common.js?v=201510200000"></script>
+<!-- /user js --> 
+<style type="text/css">
+    #sub_visual {width:100%; height:210px; text-align:center; background:#6a6a6c;}
+    
+    #container { width:1000px; margin:0 auto 50px; *zoom:1px;}
+    #container:after {content:'';display:block;clear:both;}
+   
+    #leftmenu {float:left; width:220px;}
+    #leftmenu .subNavi { margin-top:30px; }
+    
+    #contents {float:right; width:740px;}
+    #contents .con_title p { text-align:right; margin-top:25px;}
+    #contents .con_title strong {font-weight:normal; color:#373737;}
+    #contents .con_title h3 {width:740px; height:35px; padding:25px 0 5px; border-bottom:1px solid #bbb; font-size:35px; color:#373737; font-weight:bold; letter-spacing:-1px;}
+    #contents .con_txt {margin-top:40px;}
+    /* sub */
+    .mapinfo {margin-top:25px;}
+</style>
+</head>
+
+<body style="background-color:#FFFFFF; ">
+<div id="wrap">
+	<!--[[AREA_TOP_START]]-->
+	<div id="header">
+		<div>
+			<h1 id="logo"><!--L_SITE_LOGO[[[--><div id="L_SITE_LOGO">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr>
+		<td align="center" height="70">
+							<a href="/?act=main"><img src="/data/file/logo.gif" border="0" ></a>
+					</td>
+	</tr>
+</table>
+</div><!--L_SITE_LOGO]]]--></h1>			
+			<div id="topmenu"><!--L_TOP_MENU[[[--><style type="text/css">
+    #navi { position:relative; width:980px; height:50px; text-align:left; top:40px; left:90px;}
+	.navi_main { float:right; height:17px; position:relative; top:0px; right:0;}
+	.navi_main li { float:left; margin-left:100px;}
+    .navi_sub { display:block; position:absolute; top:24px; height:30px;}
+	.navi_sub_1 { left:24px; }
+	.navi_sub_2 { left:254px; }
+	.navi_sub_3 { left:720px; }
+	.navi_sub_4 { right:-30px; }
+    .navi_sub_menu { background:#fa6161; margin-top:5px; }
+    .navi_sub_menu li { float:left; height:25px; line-height:25px; padding-left:10px; padding-right:10px;/* background:#fa6161;*/ }
+    .navi_sub_menu li a { color:#888; font-size:11px;}
+	.navi_sub_menu li a:hover { text-decoration:none; color:#fff; }
+</style>
+<script type="text/javascript">
+
+var _varCurrentAct = 'board//sub0202';
+
+jQuery(document).ready(function(){
+	jQuery('#navi .navi_main .navi_main_obj').each(function(){	
+		if(!jQuery(this).attr('orgsrc')) {
+			jQuery(this).attr('orgsrc', jQuery(this).attr('src'));
+		}
+
+		jQuery(this).hover(function(){
+			_fcNaviControl(jQuery(this).attr('subcode'));
+		});
+	});
+
+	var curSubCode = _fcNaviControlMap[_varCurrentAct];
+
+	if( curSubCode ) {
+		_fcNaviControl(curSubCode);
+	}
+});
+
+/**************************************************
+*
+* # 상단메뉴 매칭 정보(URL 매개변수 사용)
+*
+* 구성: 'act / pcode / bbs_code':'subcode 번호'
+*
+**************************************************/
+var _fcNaviControlMap = {
+	'info.page/greeting/'	                                    : '',
+	'info.page/sub0102/'	                                    : '',
+	'info.page/map/'	                                    : '',
+	'info.page/curriculum/'	                                        : '',
+	'info.page/teacher/'                                        : '',	
+	'board//webzine'		                                        : '',
+	'board//notice'		                                        : '',
+	'board//faq'		                                        : '',
+	'mypage.my_qna/list/'                                        : ''
+};
+
+var _fcNaviControl = function(selCode) {
+
+	if(!selCode) return;
+
+	jQuery('#navi .navi_main .navi_main_obj').each(function(){
+		jQuery('#navi .navi_sub_'+jQuery(this).attr('subcode')).hide();
+		jQuery(this).attr('src', jQuery(this).attr('orgsrc'));
+		
+	});
+	
+	jQuery('#navi .navi_main .navi_main_obj[subcode='+selCode+']').attr('src', jQuery('#navi .navi_main .navi_main_obj[subcode='+selCode+']').attr('oversrc'));
+	jQuery('#navi .navi_sub_'+selCode).show();
+
+};
+</script>
+
+<div id="navi">
+	<ul class="navi_main">
+		<li>
+            <a href="/?act=info.page&pcode=greeting"><img src="../images/navi_1.gif" oversrc="../images/navi_1_on.gif" alt="COMPANY" class='navi_main_obj' subcode='1' /></a>
+        </li>
+		<li>
+            <a href="/?act=shop.goods_list&GC=GD0000"><img src="../images/navi_2.gif" oversrc="../images/navi_2_on.gif" alt="PRODUCT" class='navi_main_obj' subcode='2' /></a>
+        </li>
+        <li style="margin-left:390px;">
+            <a href="/?act=gallery.page&pcode=sub0301"><img src="../images/navi_3.gif" oversrc="../images/navi_3_on.gif" alt="SHOP" class='navi_main_obj' subcode='3' /></a>
+        </li>
+		<li>
+            <a href="/?act=board&bbs_code=notice"><img src="../images/navi_4.gif" oversrc="../images/navi_4_on.gif" alt="COMMUNITY" class='navi_main_obj' subcode='4' /></a>
+        </li>
+	</ul>
+
+	<div class="navi_sub_1 navi_sub" style='display:none;'>
+		<ul class="navi_sub_menu">
+			<li><a href="/?act=info.page&pcode=greeting">About Company</a></li>
+			<li><a href="/?act=info.page&pcode=sub0102">History</a></li> 
+			<li><a href="/?act=info.page&pcode=map">Directions</a></li>
+		</ul>
+	</div>
+
+	<div class="navi_sub_2 navi_sub" style='display:none;'>
+        <ul class="navi_sub_menu">
+			<li><a href="/?act=shop.goods_list&GC=GD0000">Collection</a></li>
+			<li><a href="/?act=board&bbs_code=sub0202">Item</a></li>
+		</ul>
+    </div>
+
+	<div class="navi_sub_3 navi_sub" style='display:none;'>
+		<ul class="navi_sub_menu">
+            <li><a href="?act=gallery.page&pcode=sub0301">Korea</a></li>
+            <li><a href="?act=gallery.page&pcode=sub0302">Japan</a></li>
+		</ul>
+	</div>
+
+	<div class="navi_sub_4 navi_sub" style='display:none;'>
+		<ul class="navi_sub_menu">
+			<li><a href="/?act=board&bbs_code=notice">Notice</a></li>
+			<li><a href="/?act=gallery.page&pcode=sub0402">Photo Gallery</a></li>
+		</ul>
+	</div>
+</div>
+<!--//네비--><!--L_TOP_MENU]]]--></div>
+			<div id="login"><!--L_TOP_GNB[[[--><ul>
+	<li><a href="/">HOME</a></li>	
+	<li><a href="/?act=user.user_login">LOGIN</a></li> 	
+	<li><a href="/?act=user.user_join_agree">JOIN</a></li> 
+	
+	<li><a href="/?act=info.sitemap">SITEMAP</a></li>
+</ul><!--L_TOP_GNB]]]--></div>
+		</div>
+	</div>
+	<div id="sub_visual">
+		<img src="/images/kor03-15-0266/sub/sub_img_01.jpg" alt="sub visual" />
+	</div>
+	<!--[[AREA_TOP_END]]-->
+	
+	<div id="container">
+		<!--[[AREA_LEFT_START]]-->
+		<div id="leftmenu"><!--L_LEFT_MENU[[[--><!--서브메뉴-->
+<h2><img src="/images/kor03-15-0266/sub/leftmenu2.gif" alt="PRODUCT" /></h2>
+<ul class="subNavi">
+	<li>
+		<a href="?act=shop.goods_list&GC=GD0000"><img src="/images/kor03-15-0266/sub/left_2_1.gif" alt="Collection"></a>
+	</li>
+	<li>
+		<a href="?act=board&bbs_code=sub0202"><img src="/images/kor03-15-0266/sub/left_2_2_on.gif" alt="Item"></a>
+	</li>
+</ul>
+<!--//서브메뉴--><!--L_LEFT_MENU]]]--></div>
+		<!--[[AREA_LEFT_END]]-->
+		<!--[[AREA_BODY_START]]-->
+		<div id="contents"><!--BODY[[[--><link href="/images/basic_blue/board/board_new.css?v=201510200000" type="text/css" rel="stylesheet">
+<style type="text/css">
+
+.contents_sub { width:92%; margin:40px auto; }
+
+.contents_sub table.box {width:45%; border-collapse:collapse; margin:20px auto;}
+
+.contents_sub table.box table {width:100%;}
+
+
+
+.board_view {width:100%; border:1px solid #ccc; background:#f9f9fb;}
+
+.board_view th, .board_view td {background:#f9f9fb;}
+
+.board_view th {width:100px; height:40px; text-align:left; word-wrap: break-word; word-break: break-all;}
+
+.board_view td {height:40px; color:#797979; padding:0 5px; text-align:center; word-wrap: break-word; word-break: break-all;}
+
+.board_view td.left {text-align:left;}
+
+
+
+.delete_input {border:1px solid #cecece; height:24px; width:230px;}
+
+.align_center button {margin:0 5px;}
+
+
+
+/* Button */
+
+.btn_write02 { display:inline-block; background:#5f5f5f; border:1px solid #404144;padding:7px 18px 8px 18px;}
+
+.btn_list02  { display:inline-block; background:#fcfcfc; border:1px solid #bcbcbc;padding:7px 18px 8px 18px;}
+
+.btn_txt01 {color:#fff; font-weight:600;} 
+
+.btn_txt02 {color:#1f1f1f; font-weight:600;}
+
+
+
+/* Align*/
+
+.align_center {text-align:center; margin:20px auto; overflow:hidden;}
+
+.align_center button {text-align:center;}
+
+.board_view th.delete_txt {color:#333; font-weight:600;}
+
+.bold {font-weight:600; color:red;}
+
+</style>
+
+<script type="text/javascript" src="/common/js/sky.form.checker.js?v=201510200000"></script>
+
+<script type="text/javascript">
+
+	function init() {
+
+		$l('btn_cancel', 'click', onCancel);
+
+	}
+
+	$load(init);
+
+
+
+	function onCancel(evt, obj) {
+
+		Event.stop(evt);
+
+		history.back();
+
+	}
+
+	
+
+</script>
+
+
+
+<div class="contents_sub">	
+
+
+
+<form name="dataForm" action="../" method="post">
+
+<input type="hidden" name="act" value="board.index">
+
+<input type="hidden" name="bbs_mode" value="comment_delete">
+
+<input type="hidden" name="ch" value="sub">
+
+<input type="hidden" name="sc" value="bbs_title">
+
+<input type="hidden" name="ss" value="">
+
+<input type="hidden" name="page" value="">
+
+<input type="hidden" name="bbs_code" value="sub0202">
+
+<input type="hidden" name="bbs_seq" value="1">
+
+<input type="hidden" name="category_code" value="">
+
+<input type="hidden" name="target" value="">
+
+
+<input type="hidden" name="bbs_cmt_seq" value="1">
+
+
+	<div class="board_view">
+
+		<table class="box" align="center">
+
+			<tr>
+
+				<td height="100">
+
+					
+					<!-- 댓글 삭제 -->
+
+					<table border="0" cellspacing="5" cellpadding="5">
+
+						<tr>
+
+							<td colspan="2" class="delete_txt">댓글을 <span class="bold">삭제</span>하시겠습니까?</td>
+
+						</tr>
+
+						
+						<tr>
+
+							<th>비밀번호</th>
+
+							<td class="left"><input type="password" name="bbs_cmt_passwd" value="" size="10" class="delete_input"></td>
+
+						</tr>
+
+						
+					</table>
+
+					
+				</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	
+
+	<div class="align_center">		
+
+		<button type="submit" class="btn_write02 btn_txt01" style="cursor: pointer;" onclick="go_url('')">확인</button>
+
+		<a href="#" id="btn_cancel"><button type="button" class="btn_list02 btn_txt02">취소</button></a>
+
+	</div>	
+
+    </form>
+
+</div>
+
+
+
+
+<script type="text/javascript"> var fc_dataForm; var fc_dataForm_data = {}; function init_dataForm() { var fc = fc_dataForm = new Form.Checker({ 'form' : 'dataForm' }); fc.load({"bbs_cmt_passwd":["bbs_cmt_passwd","empty","\ube44\ubc00\ubc88\ud638","\ube44\ubc00\ubc88\ud638\ub97c \uc785\ub825\ud574 \uc8fc\uc2ed\uc2dc\uc624.",true]}); if (typeof init_dataForm_callback == 'function') { init_dataForm_callback(fc, fc_dataForm_data); } } $load(init_dataForm); </script><!--BODY]]]--></div>
+		<!--[[AREA_BODY_END]]-->
+	</div>	
+	<!--[[AREA_BOTTOM_START]]-->
+	<div id="footer"><!--L_FOOTER[[[--><style type="text/css">
+.footer_area { width:980px; margin:0 auto; }
+.footer_area:after { content:""; display:block; clear:both; }
+.footer_logo { float:left; width:211px; }
+.footer_info { float:right;}
+
+.footer_info ul { float:right; height:25px; }
+.footer_info li { display:inline; background:url(/images/footer_menu_line.gif) left center no-repeat; padding:0 5px; }
+.footer_info li:first-child { background:none; padding-left:0px; }
+.footer_info li:last-child { padding-right:0px; }
+.footer_info .address { clear:both; text-align:right; }
+.footer_info .copyright { padding-top:5px; font-size:10px; }
+</style>
+
+<div class="footer_area">	
+	<div class="footer_logo"><img src="/images/logo.png" alt="하단로고" /></div>
+	<div class="footer_info">
+		<ul>
+			<li><a href="/?act=info.provision">이용약관</a></li>			
+			<li><a href="/?act=info.privacy">개인정보취급방침</a></li>				
+			<li><a href="/?act=info.no_email_collect">이메일주소 무단수집거부</a></li>			
+			<li><a href="/?act=info.page&pcode=map">오시는길</a></li>	
+		</ul>
+		<div class="address">
+			(우: 08378) 서울특별시 구로구 디지털로34길 43(구로동, 코오롱싸이언스밸리1차)  | 대표: 홍길동<br>			
+            사업자등록번호: 110-81-41272 | TEL: 02-1234-5678 | H.P : 010-1234-5678 | FAX: 02-1234-5679 | E-mail: dream@whois.co.kr			<p class="copyright">COPYRIGHT &copy; <strong>(주) 후이즈드림</strong>.  ALL RIGHTS RESERVED.</p>
+		</div>		
+	</div>	
+</div><!--L_FOOTER]]]--></div>
+	<!--[[AREA_BOTTOM_END]]-->
+</div>
+</body>
+</html><div style="display:none;"><!--
+---------------------------
+ START 2017-09-25 15:46:41
+ INIT            : 0.01352
+ EXEC            : 0.00788
+ LAYOUT          : 0.00729
+ END             : 0.01117
+---------------------------
+ TOTAL           : 0.03985
+---------------------------
+--></div>

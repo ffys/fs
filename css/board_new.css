@@ -1,0 +1,18 @@
+/* Code tidied up by ScrapBook */
+body, div, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, a, button, select { padding: 0px; }
+body, td, th, div, span, input, select, textarea, button, table { font-family: "NanumGothic","돋움",dotum,Verdana,AppleGothic,Arial,Helvetica,sans-serif; font-size: 12px; color: rgb(102, 102, 102); line-height: 16px; }
+img, th, td, fieldset, iframe { border: 0px none; }
+img { vertical-align: top; }
+li { list-style: outside none none; }
+em, address { font-style: normal; }
+input, select, button { vertical-align: middle; }
+caption, legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 0px; left: -999em; width: 0px; height: 0px; font-size: 0px; line-height: 0; text-align: left; }
+button { margin: 0px; padding: 0px; cursor: pointer; border: 0px none; vertical-align: middle; background-repeat: no-repeat; background-position: left top; }
+textarea { height: 120px; border: 1px solid rgb(206, 206, 206); }
+select { height: 26px; padding: 2px; border: 1px solid rgb(206, 206, 206); vertical-align: middle; }
+table { border-collapse: collapse; border-spacing: 0px; }
+hr { display: none; }
+a:link { color: rgb(102, 102, 102); text-decoration: none; }
+a:visited { color: rgb(102, 102, 102); text-decoration: none; }
+a:hover { color: rgb(11, 150, 212); text-decoration: underline; }
+a:active { color: rgb(11, 150, 212); text-decoration: none; }

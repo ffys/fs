@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>사이트 준비중</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="../no/__018.htm">
+    <!-- DEFAULT HEAD AREA : 빌더 기본 정보입니다. 해당 내용 삭제 시 문제가 발생할 수 있습니다. -->
+
+    <link href="../css/common.css" type="text/css" rel="stylesheet">
+    <link href="../css/jquery.theme.css" type="text/css" rel="stylesheet">
+
+    <script type="text/javascript" src="../js/jquery.custom.js"></script>
+    <script type="text/javascript" src="../js/jquery.i18n.properties-min-1.0.9.js"></script>
+
+    <script type="text/javascript" src="../js/durian.common.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.custom.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <!-- /DEFAULT HEAD AREA -->
+    <!-- user common css -->
+    <link href="../css/common_001.css" type="text/css" rel="stylesheet">
+    <!-- /user common css -->
+
+
+</head>
+
+<body style="background-color: rgb(255, 255, 255);">
+<div id="wrap">
+    <!--[[AREA_TOP_START]]-->
+    <div id="header">
+        <div>
+            <h1 id="logo"><!--L_SITE_LOGO[[[-->
+                <div id="L_SITE_LOGO">
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                        <tr>
+                            <td height="70" align="center">
+                                <a href="../index.html"><img src="../images/logo.png" border="0"></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div><!--L_SITE_LOGO]]]--></h1>
+            <div id="topmenu">
+
+
+                <div id="navi">
+                    <ul class="navi_main">
+                        <li>
+                            <a href="about.html"><img src="../images/navi_1.gif" oversrc="../images/navi_1_on.gif"
+                                                      alt="COMPANY" class="navi_main_obj" subcode="1"></a>
+                        </li>
+                        <li>
+                            <a href="product.html"><img src="../images/navi_2.gif" oversrc="../images/navi_2_on.gif"
+                                                        alt="PRODUCT" class="navi_main_obj" subcode="2"></a>
+                        </li>
+                        <li style="margin-left: 390px;">
+                            <a href="request.html"><img src="../images/navi_3.gif" oversrc="../images/navi_3_on.gif"
+                                                        alt="SHOP" class="navi_main_obj" subcode="3"></a>
+                        </li>
+                        <li>
+                            <a href="contact.html"><img src="../images/navi_4.gif" oversrc="../images/navi_4_on.gif"
+                                                        alt="COMMUNITY" class="navi_main_obj" subcode="4"></a>
+                        </li>
+                    </ul>
+
+                    <div class="navi_sub_1 navi_sub" style="display: none;">
+
+                    </div>
+
+                    <div class="navi_sub_2 navi_sub" style="display: none;">
+                        <ul class="navi_sub_menu">
+                            <li><a href="product.html">Collection</a></li>
+                            <li><a href="default_007.html">Item</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="navi_sub_3 navi_sub" style="display: none;">
+                        <ul class="navi_sub_menu">
+                            <li><a href="request.html">NOTICE</a></li>
+                            <li><a href="default_008.html">Q&A</a></li>
+                        </ul>
+                    </div>
+
+                    <!--<div class="navi_sub_4 navi_sub" style="display: none;">		<ul class="navi_sub_menu">			<li><a href="#">Notice</a></li>			<li><a href="default_008.html">Photo Gallery</a></li>		</ul>	</div>-->
+                </div>
+                <!--//네비--><!--L_TOP_MENU]]]--></div>
+            <div id="login"><!--L_TOP_GNB[[[-->
+                <ul>
+                   <li><a href="../index.html">HOME</a></li>
+
+
+                    <li><a href="default_011.html">SITEMAP</a></li>
+                </ul><!--L_TOP_GNB]]]--></div>
+        </div>
+    </div>
+    <div id="sub_visual">
+        <img src="../images/sub_img_01.jpg" alt="sub visual">
+    </div>
+    <!--[[AREA_TOP_END]]-->
+
+    <div id="container">
+        <!--[[AREA_LEFT_START]]-->
+        <div id="leftmenu"><!--L_LEFT_MENU[[[--><!--서브메뉴-->
+            <h2><img src="../images/leftmenu2.gif" alt="PRODUCT"></h2>
+            <ul class="subNavi">
+                <li>
+                    <a href="product.html"><img src="../images/left_2_1.gif" alt="Collection"></a>
+                </li>
+                <li>
+                    <a href="default_007.html"><img src="../images/left_2_2_on.gif" alt="Item"></a>
+                </li>
+            </ul>
+            <!--//서브메뉴--><!--L_LEFT_MENU]]]--></div>
+        <!--[[AREA_LEFT_END]]-->
+        <!--[[AREA_BODY_START]]-->
+        <div id="contents"><!--BODY[[[-->
+            <script type="text/javascript" src="../js/sky.form.checker.js"></script>
+            <script type="text/javascript">
+                // 2. init
+                function init() {
+                    if ($('submit1')) {
+                        $l($('submit1'), 'click', onSubmit);
+                    }
+                    if ($('btn_good')) {
+                        $l($('btn_good'), 'click', onGoodClick);
+                    }
+
+                    reSizeBBSFileImage();
+
+                }
+
+                // 1. event listener
+                $load(init);
+
+                // submit
+                function onSubmit(evt, obj) {
+                    Event.stop(evt);
+                    var bbs_mode = obj.getAttribute('bbs_mode');
+                    var act = obj.getAttribute('act');
+                    submitForm(bbs_mode, act);
+                }
+
+                function submitForm(bbs_mode, act) {
+                    var form = document.forms['dataForm'];
+
+                    if (act != null && typeof act != 'undefined') {
+                        form.elements['act'].value = act;
+                    }
+                    if (bbs_mode != null && typeof bbs_mode != 'undefined') {
+                        form.elements['bbs_mode'].value = bbs_mode;
+                    }
+
+                    if (typeof form.Checker != 'undefined') {
+                        form.Checker.doSubmit();
+                    } else {
+                        form.submit();
+                    }
+                }
+
+                function onGoodClick(evt, obj) {
+                    Event.stop(evt);
+                    if (confirm('해당 글을 추천하시겠습니까?')) {
+                        location.href = "/?act=board&bbs_code=sub0202&bbs_mode=vote&bbs_seq=1";
+                    } else {
+                        return false;
+                    }
+                }
+
+                function reSizeBBSFileImage() {
+
+                    var wrap_size = Element.getSize($q('#bbs_file_wrap'));
+
+                    $qList('#bbs_file_wrap img').each(function (selObj) {
+                        img_width = selObj.getAttribute('sizeWidth');
+
+                        if (wrap_size.width < img_width && wrap_size.width > 0) {
+                            Element.setSize(selObj, wrap_size.width, null);
+                        }
+
+                        Element.show(selObj);
+                    });
+
+                }
+
+                /**
+                 * SNS 스크랩
+                 * 2013.01.31 철형
+                 */
+                function sendYozmDaum(prefix, link) {
+                    var url = 'http://yozm.daum.net/api/popup/prePost?link=' + encodeURIComponent(link) + '&prefix=' + encodeURIComponent(prefix);
+                    var yozm = window.open(url, 'yozm', 'width=466, height=356');
+                    yozm.focus();
+                }
+
+                function sendFaceBook(message, url) {
+                    var url = 'http://www.facebook.com/sharer.php?u=' + url + '&t=' + encodeURIComponent(message);
+                    var facebook = window.open(url, 'facebook', '');
+                    facebook.focus();
+                }
+
+                function sendMe2Day(message, url, tag) {
+                    var url = 'http://me2day.net/posts/new?new_post[body]=' + encodeURIComponent(message) + ' ' + encodeURIComponent(url) + '&new_post[tags]=' + encodeURIComponent(tag);
+                    var me2day = window.open(url, 'me2Day', '');
+                    me2day.focus();
+                }
+
+                function sendTwitter(text, url) {
+                    var url = 'http://twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text);
+                    var twitter = window.open(url, 'twitter', '');
+                    twitter.focus();
+                }
+
+            </script>
+            <link href="../css/board_new.css" type="text/css" rel="stylesheet">
+            <style type="text/css">
+                /* Code tidied up by ScrapBook */
+                .site_navi {
+                    width: 100%;
+                    text-align: right;
+                    font-size: 11px;
+                    color: rgb(131, 131, 131);
+                    border-bottom: 1px solid rgb(221, 221, 221);
+                    padding-bottom: 7px;
+                }
+
+                .contents_sub {
+                    width: 100%;
+                    margin: 0px;
+                }
+
+                .contents_sub table {
+                    width: 100%;
+                }
+
+                .board_view {
+                    border-top: 1px solid rgb(70, 70, 70);
+                }
+
+                .board_title {
+                    font: bold 14px dotum;
+                    color: rgb(0, 0, 0);
+                }
+
+                .bold_blue {
+                    font: bold 12px dotum;
+                    color: rgb(122, 181, 223);
+                }
+
+                .board_view table {
+                    border-collapse: collapse;
+                }
+
+                .board_view th, .board_view td {
+                    height: 25px;
+                    text-align: left;
+                    padding: 8px;
+                }
+
+                .board_view th {
+                    border-bottom: 1px solid rgb(218, 218, 218);
+                    color: rgb(70, 70, 70);
+                    font-weight: 600;
+                    background-color: rgb(242, 242, 242);
+                }
+
+                .board_view td {
+                    border-bottom: 1px solid rgb(218, 218, 218);
+                    color: rgb(121, 121, 121);
+                }
+
+                .board_view_area {
+                    border: 1px solid rgb(218, 218, 218);
+                    background-color: rgb(242, 242, 242);
+                    height: 100px;
+                    width: 500px;
+                }
+
+                .board_view_input {
+                    border: 1px solid rgb(218, 218, 218);
+                    background-color: rgb(242, 242, 242);
+                    height: 12px;
+                    width: 500px;
+                }
+
+                .board_view_input_mail {
+                    border: 1px solid rgb(218, 218, 218);
+                    background-color: rgb(242, 242, 242);
+                    height: 12px;
+                    width: 100px;
+                }
+
+                .board_view_input_number {
+                    border: 1px solid rgb(218, 218, 218);
+                    background-color: rgb(242, 242, 242);
+                    height: 12px;
+                    width: 30px;
+                }
+
+                .board_view td.tip {
+                    color: rgb(122, 181, 223);
+                }
+
+                .coment_input {
+                    border: 1px solid rgb(187, 187, 187);
+                    height: 20px;
+                    width: 80px;
+                }
+
+                .coment_input_text {
+                    border: 1px solid rgb(187, 187, 187);
+                    width: 100%;
+                    height: 60px;
+                }
+
+                .page {
+                    text-align: right;
+                    font: 11px verdana;
+                    padding: 5px;
+                }
+
+                .view_box {
+                    border: 1px solid rgb(210, 210, 210);
+                    padding: 10px;
+                }
+
+                .veiw_box_td {
+                    border-bottom: 1px dotted rgb(210, 210, 210);
+                    padding: 5px;
+                }
+
+                .veiw_box_td2 {
+                    padding: 5px;
+                }
+
+                .coment_re {
+                    font: 11px dotum;
+                    padding: 5px;
+                    background-color: rgb(250, 250, 250);
+                    border-bottom: 1px dotted rgb(210, 210, 210);
+                    overflow-wrap: break-word;
+                    word-break: break-all;
+                }
+
+                .coment_re_txt {
+                    background-color: rgb(250, 250, 250);
+                    line-height: 15px;
+                    padding: 5px 0px 0px;
+                }
+
+                .coment_re_txt img {
+                    padding-top: 2px;
+                }
+
+                .upload_db_wrap td {
+                    border-bottom: 0px none;
+                }
+
+                .upload_db_wrap div {
+                    padding: 3px 0px 0px;
+                }
+
+                .btn_write {
+                    display: inline-block;
+                    background: rgb(95, 95, 95) none repeat scroll 0% 0%;
+                    border: 1px solid rgb(64, 65, 68);
+                    padding: 6px 17px 7px;
+                }
+
+                .btn_list {
+                    display: inline-block;
+                    background: rgb(252, 252, 252) none repeat scroll 0% 0%;
+                    border: 1px solid rgb(188, 188, 188);
+                    padding: 6px 17px 7px;
+                }
+
+                .btn_re {
+                    display: inline-block;
+                    width: 100px;
+                    height: 62px;
+                    text-align: center;
+                    background: rgba(0, 0, 0, 0) url("../images/btn/btn_comment_bg.gif") no-repeat scroll 0% 0%;
+                }
+
+                .btn_txt01 {
+                    color: rgb(255, 255, 255);
+                    font-weight: 600;
+                }
+
+                .btn_txt02 {
+                    color: rgb(31, 31, 31);
+                    font-weight: 600;
+                }
+
+                .btn_area {
+                    overflow: hidden;
+                    margin: 10px 0px;
+                }
+
+                .align_left {
+                    float: left;
+                }
+
+                .align_right {
+                    float: right;
+                }
+
+                .align_right button {
+                }
+
+                .align_left button {
+                }
+
+                .tR {
+                    text-align: right;
+                }
+
+                .pR10 {
+                    padding-right: 10px;
+                }
+
+                .next_data_area {
+                    margin-top: 20px;
+                    padding-top: 5px;
+                    padding-left: 8px;
+                    text-align: left;
+                    border-top: 1px solid rgb(218, 218, 218);
+                }
+
+                .prev_data_area {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    padding-left: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid rgb(218, 218, 218);
+                }
+
+                .next_data_area .b {
+                    font-weight: bold;
+                }
+
+                .prev_data_area .b {
+                    font-weight: bold;
+                }
+
+                .txt_blue {
+                    font-weight: bold;
+                    color: rgb(122, 181, 223);
+                }
+
+                .txt_orange {
+                    font: bold 12px verdana;
+                    color: rgb(255, 126, 0);
+                }
+
+                .bg01 {
+                    background-color: rgb(250, 250, 250);
+                }
+            </style>
+
+            <!-- 상단 디자인 -->
+            <div class="con_title">
+                <p>HOME &gt; PRODUCT &gt; <strong>Item</strong></p>
+                <h3>Item</h3>
+            </div>
+            <div class="con_txt">
+                <form name="dataForm" action="http://kor03-15-0266.whoisgh.com/" method="post">
+                    <input name="act" value="board.index" type="hidden">
+                    <input name="bbs_mode" value="comment_write" type="hidden">
+                    <input name="ch" value="sub" type="hidden">
+                    <input name="sc" value="" type="hidden">
+                    <input name="ss" value="" type="hidden">
+                    <input name="page" value="" type="hidden">
+                    <input name="bbs_code" value="sub0202" type="hidden">
+                    <input name="bbs_seq" value="1" type="hidden">
+                    <input name="category_code" value="" type="hidden">
+
+                    <div class="contents_sub">
+                        <!--게시판-->
+                        <div class="board_view">
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <th width="10%">제목</th>
+                                    <td width="60%"> item 게시판입니다.</td>
+                                    <th width="10%">등록일</th>
+                                    <td width="20%">2015.11.16 11:56</td>
+                                </tr>
+                                <tr>
+                                    <th>글쓴이</th>
+                                    <td>데모</td>
+                                    <th>조회</th>
+                                    <td>322</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="padding: 20px; line-height: 160%;" valign="top" height="200">
+                                        <div id="bbs_file_wrap">
+                                            <div>
+                                                <img src="../images/509505.jpg" sizewidth="922"
+                                                     onerror="Durian.imgDefault(this, '/data/board/sub0202/509505.jpg')"
+                                                     style="display: none;"><br>
+                                            </div>
+                                        </div>
+
+                                        <p>item 게시판입니다.</p>
+                                        <div style="margin-top: 50px; text-align: right;">
+                                            <a href="javascript:;" onclick="sendTwitter('item 게시판입니다.', '');"
+                                               title="트위터"><img src="../images/btn/icon_twitter.gif" title="트위터"></a>
+                                            <a href="javascript:;" onclick="sendFaceBook('item 게시판입니다.', '');"
+                                               title="페이스북"><img src="../images/btn/icon_facebook.gif" title="페이스북"></a>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="coment_re" width="20%">
+                                        <strong>test</strong> (2016.02.03 12:49)
+                                        <div class="coment_re_txt">
+                                            test <a href="default_029.html"><img src="../images/btn/icon_del.gif"
+                                                                                 alt="삭제"></a></div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="coment_re" width="94%">
+                                        글쓴이 <input name="bbs_cmt_name" class="coment_input" maxlength="5" type="text">&nbsp;&nbsp;
+                                        비밀번호 <input name="bbs_cmt_passwd" class="coment_input pR10" type="password">&nbsp;&nbsp;
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td><img src="_.png" border="1"></td>
+                                                <td>
+                                                    보이는 순서대로 문자를 모두 입력해 주세요<br>
+                                                    <input name="img_auth_code" value="" class="coment_input"
+                                                           onkeyup="javascript:this.value=this.value.toUpperCase();"
+                                                           type="text">
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td class="bg01" width="6%"></td>
+                                </tr>
+                                <tr>
+                                    <td class="bg01">
+                                        <textarea name="bbs_cmt_content" cols="" rows=""
+                                                  class="coment_input_text"></textarea>
+                                    </td>
+                                    <td class="bg01" align="right"><a id="submit1">
+                                        <button type="submit" class="btn_re btn_txt01">댓글등록</button>
+                                    </a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="btn_area">
+                            <div class="align_left">
+                                <button type="button" class="btn_list btn_txt02" style="cursor: pointer;"
+                                        onclick="go_url('/?act=board&amp;bbs_code=sub0202&amp;bbs_mode=list')">목록
+                                </button>
+                            </div>
+                            <div class="align_right">
+
+                                <button type="button" class="btn_list btn_txt02" style="cursor: pointer;"
+                                        onclick="go_url('/?act=board&amp;bbs_code=sub0202&amp;bbs_mode=modify&amp;bbs_seq=1')">
+                                    수정
+                                </button>
+                                <button type="button" class="btn_list btn_txt02" style="cursor: pointer;"
+                                        onclick="go_url('/?act=board&amp;bbs_code=sub0202&amp;bbs_mode=delete&amp;bbs_seq=1')">
+                                    삭제
+                                </button>
+                                <button type="button" class="btn_write btn_txt01" style="cursor: pointer;"
+                                        onclick="go_url('/?act=board&amp;bbs_code=sub0202&amp;bbs_mode=write')">쓰기
+                                </button>
+
+                            </div>
+                        </div>
+                        <!--//게시판-->
+                        <div class="next_data_area">
+                            <span class="b">다음글 | </span>
+                            다음글이 없습니다.
+                        </div>
+                        <div class="prev_data_area">
+                            <span class="b">이전글 | </span>
+                            이전글이 없습니다.
+                        </div>
+                    </div>
+                </form>
+                <iframe name="download" style="display: none;" src="default_017_1.html"></iframe>
+                <!-- 하단 디자인 -->
+            </div>
+            <script type="text/javascript"> var fc_dataForm;
+            var fc_dataForm_data = {};
+            function init_dataForm() {
+                var fc = fc_dataForm = new Form.Checker({'form': 'dataForm'});
+                fc.load({
+                    "bbs_cmt_name": ["bbs_cmt_name", true, "\uae00\uc4f4\uc774", "", true],
+                    "bbs_cmt_passwd": ["bbs_cmt_passwd", true, "\ube44\ubc00\ubc88\ud638", "", true],
+                    "bbs_cmt_content": ["bbs_cmt_content", true, "\ub313\uae00 \ub0b4\uc6a9", "\ub313\uae00 \ub0b4\uc6a9\uc740 0\uc790\uae4c\uc9c0\ub9cc \uc785\ub825\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4.", true]
+                });
+                if (typeof init_dataForm_callback == 'function') {
+                    init_dataForm_callback(fc, fc_dataForm_data);
+                }
+            }
+            $load(init_dataForm); </script>
+            <script type="text/javascript">
+                function go_url(url) {
+
+                    window.location.href = url;
+                }
+            </script><!--BODY]]]--></div>
+        <!--[[AREA_BODY_END]]-->
+    </div>
+    <!--[[AREA_BOTTOM_START]]-->
+    <div id="footer"><!--L_FOOTER[[[-->
+
+        <div class="footer_area">
+            <div class="footer_logo"><img src="../images/logo.png" alt="하단로고"></div>
+            <div class="footer_info">
+                <ul>
+                    <li><a href="default_012.html">이용약관</a></li>
+                    <li><a href="default_013.html">개인정보취급방침</a></li>
+                    <li><a href="default_014.html">이메일주소 무단수집거부</a></li>
+                    <li><a href="default_006.html">오시는길</a></li>
+                </ul>
+                <div class="address">
+                    (우: 08378) 서울특별시 구로구 디지털로34길 43(구로동, 코오롱싸이언스밸리1차) | 대표: 홍길동<br>
+                    사업자등록번호: 110-81-41272 | TEL: 02-1234-5678 | H.P : 010-1234-5678 | FAX: 02-1234-5679 | E-mail:
+                    dream@whois.co.kr <p class="copyright">COPYRIGHT © <strong>(주) 후이즈드림</strong>. ALL RIGHTS RESERVED.
+                </p>
+                </div>
+            </div>
+        </div><!--L_FOOTER]]]--></div>
+    <!--[[AREA_BOTTOM_END]]-->
+</div>
+
+<div style="display: none;"><!--
+---------------------------
+ START 2017-09-25 15:46:22
+ INIT            : 0.01388
+ EXEC            : 0.55737
+ LAYOUT          : 0.00772
+ END             : 0.01066
+---------------------------
+ TOTAL           : 0.58963
+---------------------------
+--></div>
+
+</body>
+</html>

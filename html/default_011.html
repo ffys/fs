@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>사이트 준비중</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="../no/__013.htm">
+    <!-- DEFAULT HEAD AREA : 빌더 기본 정보입니다. 해당 내용 삭제 시 문제가 발생할 수 있습니다. -->
+
+    <link href="../css/common.css" type="text/css" rel="stylesheet">
+    <link href="../css/jquery.theme.css" type="text/css" rel="stylesheet">
+
+    <script type="text/javascript" src="../js/jquery.custom.js"></script>
+    <script type="text/javascript" src="../js/jquery.i18n.properties-min-1.0.9.js"></script>
+
+    <script type="text/javascript" src="../js/durian.common.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.custom.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <!-- /DEFAULT HEAD AREA -->
+    <!-- user common css -->
+    <link href="../css/common_001.css" type="text/css" rel="stylesheet">
+    <!-- /user common css -->
+
+    <style type="text/css">
+        /* Code tidied up by ScrapBook */
+        #sub_visual {
+            width: 100%;
+            height: 210px;
+            text-align: center;
+            background: rgb(106, 106, 108) none repeat scroll 0% 0%;
+        }
+
+        #container {
+            width: 1000px;
+            margin: 25px auto 50px;
+        }
+
+        #container::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(255, 255, 255);">
+<div id="wrap">
+    <!--[[AREA_TOP_START]]-->
+    <div id="header">
+        <div>
+            <h1 id="logo"><!--L_SITE_LOGO[[[-->
+                <div id="L_SITE_LOGO">
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                        <tr>
+                            <td height="70" align="center">
+                                <a href="../index.html"><img src="../images/logo.png" border="0"></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div><!--L_SITE_LOGO]]]--></h1>
+            <div id="topmenu">
+                <script type="text/javascript">
+
+                    var _varCurrentAct = 'info.sitemap//';
+
+                    jQuery(document).ready(function () {
+                        jQuery('#navi .navi_main .navi_main_obj').each(function () {
+                            if (!jQuery(this).attr('orgsrc')) {
+                                jQuery(this).attr('orgsrc', jQuery(this).attr('src'));
+                            }
+
+                            jQuery(this).hover(function () {
+                                _fcNaviControl(jQuery(this).attr('subcode'));
+                            });
+                        });
+
+                        var curSubCode = _fcNaviControlMap[_varCurrentAct];
+
+                        if (curSubCode) {
+                            _fcNaviControl(curSubCode);
+                        }
+                    });
+
+                    /**************************************************
+                     *
+                     * # 상단메뉴 매칭 정보(URL 매개변수 사용)
+                     *
+                     * 구성: 'act / pcode / bbs_code':'subcode 번호'
+                     *
+                     **************************************************/
+                    var _fcNaviControlMap = {
+                        'info.page/greeting/': '',
+                        'info.page/sub0102/': '',
+                        'info.page/map/': '',
+                        'info.page/curriculum/': '',
+                        'info.page/teacher/': '',
+                        'board//webzine': '',
+                        'board//notice': '',
+                        'board//faq': '',
+                        'mypage.my_qna/list/': ''
+                    };
+
+                    var _fcNaviControl = function (selCode) {
+
+                        if (!selCode) return;
+
+                        jQuery('#navi .navi_main .navi_main_obj').each(function () {
+                            jQuery('#navi .navi_sub_' + jQuery(this).attr('subcode')).hide();
+                            jQuery(this).attr('src', jQuery(this).attr('orgsrc'));
+
+                        });
+
+                        jQuery('#navi .navi_main .navi_main_obj[subcode=' + selCode + ']').attr('src', jQuery('#navi .navi_main .navi_main_obj[subcode=' + selCode + ']').attr('oversrc'));
+                        jQuery('#navi .navi_sub_' + selCode).show();
+
+                    };
+                </script>
+
+                <div id="navi">
+                    <ul class="navi_main">
+                        <li>
+                            <a href="about.html"><img src="../images/navi_1.gif" oversrc="../images/navi_1_on.gif"
+                                                      alt="COMPANY" class="navi_main_obj" subcode="1"></a>
+                        </li>
+                        <li>
+                            <a href="product.html"><img src="../images/navi_2.gif" oversrc="../images/navi_2_on.gif"
+                                                        alt="PRODUCT" class="navi_main_obj" subcode="2"></a>
+                        </li>
+                        <li style="margin-left: 390px;">
+                            <a href="request.html"><img src="../images/navi_3.gif" oversrc="../images/navi_3_on.gif"
+                                                        alt="SHOP" class="navi_main_obj" subcode="3"></a>
+                        </li>
+                        <li>
+                            <a href="contact.html"><img src="../images/navi_4.gif" oversrc="../images/navi_4_on.gif"
+                                                        alt="COMMUNITY" class="navi_main_obj" subcode="4"></a>
+                        </li>
+                    </ul>
+
+                    <div class="navi_sub_1 navi_sub" style="display: none;">
+
+                    </div>
+
+                    <div class="navi_sub_2 navi_sub" style="display: none;">
+                        <ul class="navi_sub_menu">
+                            <li><a href="product.html">Collection</a></li>
+                            <li><a href="default_007.html">Item</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="navi_sub_3 navi_sub" style="display: none;">
+                        <ul class="navi_sub_menu">
+                            <li><a href="request.html">NOTICE</a></li>
+                            <li><a href="default_008.html">Q&A</a></li>
+                        </ul>
+                    </div>
+
+                    <!--<div class="navi_sub_4 navi_sub" style="display: none;">		<ul class="navi_sub_menu">			<li><a href="#">Notice</a></li>			<li><a href="default_008.html">Photo Gallery</a></li>		</ul>	</div>-->
+                </div>
+                <!--//네비--><!--L_TOP_MENU]]]--></div>
+            <div id="login"><!--L_TOP_GNB[[[-->
+                <ul>
+                   <li><a href="../index.html">HOME</a></li>
+
+
+                    <li><a href="#">SITEMAP</a></li>
+                </ul><!--L_TOP_GNB]]]--></div>
+        </div>
+    </div>
+    <div id="sub_visual">
+        <img src="../images/sub_img_01.jpg" alt="sub visual">
+    </div>
+    <!--[[AREA_TOP_END]]-->
+
+    <!--[[AREA_BODY_START]]-->
+    <div id="container"><!--BODY[[[-->
+        <style type="text/css">
+            /* Code tidied up by ScrapBook */
+            a:link {
+                color: rgb(124, 123, 123);
+                text-decoration: none;
+                line-height: 16px;
+            }
+
+            a:visited {
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+                color: rgb(11, 150, 212);
+            }
+
+            a:active {
+                text-decoration: none;
+                color: rgb(11, 150, 212);
+            }
+
+            .contents {
+                width: 100%;
+                margin: 0px auto 30px;
+            }
+
+            .contents .con_title {
+                width: 100%;
+                height: 58px;
+                overflow: hidden;
+                margin-bottom: 10px;
+                vertical-align: top;
+                border-bottom: medium none;
+            }
+
+            .contents .con_title h3 {
+                float: left;
+            }
+
+            .contents .con_title p {
+                float: right;
+                margin-right: 0px;
+            }
+
+            .contents .con_txt {
+                width: 100%;
+                border-top: 1px solid rgb(127, 127, 127);
+                padding: 10px 0px;
+            }
+
+            .mt35 {
+                margin-top: 35px;
+            }
+
+            .taR {
+                text-align: right;
+            }
+
+            .sitemap {
+                width: 145px;
+                float: left;
+                margin: 10px 20px;
+                min-height: 150px;
+                height: auto !important;
+            }
+
+            .sitemap dl {
+                font: 12px "NanumGothic";
+                margin: 25px 0px 50px;
+            }
+
+            .sitemap dd.depth1 {
+                width: 100%;
+                padding: 5px;
+                border: 2px solid rgb(196, 196, 196);
+                font-weight: bold;
+                text-align: center;
+                color: rgb(102, 102, 102);
+                margin-bottom: 5px;
+            }
+
+            .sitemap dd.depth2 {
+                padding: 5px;
+                border-bottom: 1px dotted rgb(153, 153, 153);
+                width: 100%;
+            }
+
+            .sitemap dd.depth2.hasSub {
+                border-bottom: 0px none;
+                padding: 5px 5px 0px;
+            }
+
+            .sitemap div.depth3 {
+                margin: 3px 0px 0px 5px;
+            }
+        </style>
+        <div class="contents">
+            <div class="con_title">
+                <h3><img src="../images/title_sitemap.gif" alt="사이트맵"></h3>
+                <p class="mt35 taR">Home &gt; <strong>사이트맵</strong></p>
+            </div>
+            <div class="con_txt">
+                <div class="sitemap">
+                    <dl>
+                        <dd class="depth1">COMPANY</dd>
+                        <dd class="depth2">
+                            <a href="about.html">About Company</a>
+
+                        </dd>
+                        <dd class="depth2">
+                            <a href="default_005.html">History </a>
+
+                        </dd>
+                        <dd class="depth2">
+                            <a href="default_006.html">Directions</a>
+
+                        </dd>
+
+                    </dl>
+                </div>
+                <div class="sitemap">
+                    <dl>
+                        <dd class="depth1">PRODUCT</dd>
+                        <dd class="depth2">
+                            <a href="default_020.html">Collection</a>
+
+                        </dd>
+                        <dd class="depth2">
+                            <a href="default_007.html">Item</a>
+
+                        </dd>
+
+                    </dl>
+                </div>
+                <div class="sitemap">
+                    <dl>
+                        <dd class="depth1">SHOP</dd>
+                        <dd class="depth2">
+                            <a href="request.html">Korea</a>
+
+                        </dd>
+                        <dd class="depth2">
+                            <a href="default_008.html">Japan</a>
+
+                        </dd>
+
+                    </dl>
+                </div>
+                <div class="sitemap">
+                    <dl>
+                        <dd class="depth1">COMMUNITY</dd>
+                        <dd class="depth2">
+                            <a href="contact.html">Notice</a>
+
+                        </dd>
+                        <dd class="depth2">
+                            <a href="default_008.html">Photo Gallery </a>
+
+                        </dd>
+
+                    </dl>
+                </div>
+                <div class="sitemap">
+                    <dl>
+                        <dd class="depth1">마이페이지</dd>
+                        <dd class="depth2">
+                            <a href="default_021.html">내 정보수정</a>
+
+                        </dd>
+                        <dd class="depth2">
+                            <a href="default_022.html">내 쪽지함</a>
+
+                        </dd>
+                        <dd class="depth2">
+                            <a href="default_023.html">1:1상담 내역</a>
+
+                        </dd>
+                        <dd class="depth2">
+                            <a href="default_024.html">1:1상담 보기</a>
+
+                        </dd>
+                        <dd class="depth2">
+                            <a href="default_025.html">1:1상담 쓰기</a>
+
+                        </dd>
+                        <dd class="depth2">
+                            <a href="default_026.html">1:1상담 삭제</a>
+
+                        </dd>
+                        <dd class="depth2">
+                            <a href="default_027.html">회원탈퇴</a>
+
+                        </dd>
+                        <dd class="depth2">
+                            <a href="default_028.html">회원탈퇴 완료</a>
+
+                        </dd>
+
+                    </dl>
+                </div>
+
+            </div>
+        </div>
+        <!--BODY]]]--></div>
+    <!--[[AREA_BODY_END]]-->
+
+    <!--[[AREA_BOTTOM_START]]-->
+    <div id="footer"><!--L_FOOTER[[[-->
+
+        <div class="footer_area">
+            <div class="footer_logo"><img src="../images/logo.png" alt="하단로고"></div>
+            <div class="footer_info">
+                <ul>
+                    <li><a href="default_012.html">이용약관</a></li>
+                    <li><a href="default_013.html">개인정보취급방침</a></li>
+                    <li><a href="default_014.html">이메일주소 무단수집거부</a></li>
+                    <li><a href="default_006.html">오시는길</a></li>
+                </ul>
+                <div class="address">
+                    (우: 08378) 서울특별시 구로구 디지털로34길 43(구로동, 코오롱싸이언스밸리1차) | 대표: 홍길동<br>
+                    사업자등록번호: 110-81-41272 | TEL: 02-1234-5678 | H.P : 010-1234-5678 | FAX: 02-1234-5679 | E-mail:
+                    dream@whois.co.kr <p class="copyright">COPYRIGHT © <strong>(주) 후이즈드림</strong>. ALL RIGHTS RESERVED.
+                </p>
+                </div>
+            </div>
+        </div><!--L_FOOTER]]]--></div>
+    <!--[[AREA_BOTTOM_END]]-->
+</div>
+
+<div style="display: none;"><!--
+---------------------------
+ START 2017-09-25 15:46:11
+ INIT            : 0.01027
+ EXEC            : 0.03978
+ LAYOUT          : 0.00617
+ END             : 0.00862
+---------------------------
+ TOTAL           : 0.06483
+---------------------------
+--></div>
+
+</body>
+</html>

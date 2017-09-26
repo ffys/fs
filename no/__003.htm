@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>사이트 준비중</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="" />
+<!-- DEFAULT HEAD AREA : 빌더 기본 정보입니다. 해당 내용 삭제 시 문제가 발생할 수 있습니다. -->
+
+			<link href='/tpl/common.css?v=201510200000' type='text/css' rel='stylesheet' />
+			<link href='/common/js/jquery/theme/jquery.theme.css?v=201510200000' type='text/css' rel='stylesheet' />
+			<script type='text/javascript' src='/common/js/sky.rama.js?v=201510200000'></script>
+			<script type='text/javascript' src='/common/js/jquery/jquery.custom.js?v=201510200000'></script>
+			<script type='text/javascript' src='/common/js/i18n/jquery.i18n.properties-min-1.0.9.js?v=201510200000'></script>
+			<script type='text/javascript' src='/?act=common.set_langvar&v=201510200000'></script>
+			<script type='text/javascript' src='/common/js/durian.common.js?v=201510200000'></script>
+			<script type='text/javascript' src='/common/js/jquery/jquery-ui.custom.min.js?v=201510200000'></script>
+			<!-- /DEFAULT HEAD AREA -->
+<!-- user common css -->
+<link href="/data/tpl/common.css?v=201510200000" type="text/css" rel="stylesheet">
+<!-- /user common css -->
+<!-- user js -->
+<script type="text/javascript" src="/data/tpl/common.js?v=201510200000"></script>
+<!-- /user js --> 
+<style type="text/css">
+    #sub_visual {width:100%; height:210px; text-align:center; background:#6a6a6c;}
+    
+    #container { width:1000px; margin:0 auto 50px; *zoom:1px;}
+    #container:after {content:'';display:block;clear:both;}
+   
+    #leftmenu {float:left; width:220px;}
+    #leftmenu .subNavi { margin-top:30px; }
+    
+    #contents {float:right; width:740px;}
+    #contents .con_title p { text-align:right; margin-top:25px;}
+    #contents .con_title strong {font-weight:normal; color:#373737;}
+    #contents .con_title h3 {width:740px; height:35px; padding:25px 0 5px; border-bottom:1px solid #bbb; font-size:35px; color:#373737; font-weight:bold; letter-spacing:-1px;}
+    #contents .con_txt {margin-top:40px;}
+    /* sub */
+    .mapinfo {margin-top:25px;}
+</style>
+</head>
+
+<body style="background-color:#FFFFFF; ">
+<div id="wrap">
+	<!--[[AREA_TOP_START]]-->
+	<div id="header">
+		<div>
+			<h1 id="logo"><!--L_SITE_LOGO[[[--><div id="L_SITE_LOGO">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr>
+		<td align="center" height="70">
+							<a href="/?act=main"><img src="/data/file/logo.gif" border="0" ></a>
+					</td>
+	</tr>
+</table>
+</div><!--L_SITE_LOGO]]]--></h1>			
+			<div id="topmenu"><!--L_TOP_MENU[[[--><style type="text/css">
+    #navi { position:relative; width:980px; height:50px; text-align:left; top:40px; left:90px;}
+	.navi_main { float:right; height:17px; position:relative; top:0px; right:0;}
+	.navi_main li { float:left; margin-left:100px;}
+    .navi_sub { display:block; position:absolute; top:24px; height:30px;}
+	.navi_sub_1 { left:24px; }
+	.navi_sub_2 { left:254px; }
+	.navi_sub_3 { left:720px; }
+	.navi_sub_4 { right:-30px; }
+    .navi_sub_menu { background:#fa6161; margin-top:5px; }
+    .navi_sub_menu li { float:left; height:25px; line-height:25px; padding-left:10px; padding-right:10px;/* background:#fa6161;*/ }
+    .navi_sub_menu li a { color:#888; font-size:11px;}
+	.navi_sub_menu li a:hover { text-decoration:none; color:#fff; }
+</style>
+
+
+<div id="navi">
+	<ul class="navi_main">
+		<li>
+            <a href="/?act=info.page&pcode=greeting"><img src="../images/navi_1.gif" oversrc="../images/navi_1_on.gif" alt="COMPANY" class='navi_main_obj' subcode='1' /></a>
+        </li>
+		<li>
+            <a href="/?act=shop.goods_list&GC=GD0000"><img src="../images/navi_2.gif" oversrc="../images/navi_2_on.gif" alt="PRODUCT" class='navi_main_obj' subcode='2' /></a>
+        </li>
+        <li style="margin-left:390px;">
+            <a href="/?act=gallery.page&pcode=sub0301"><img src="../images/navi_3.gif" oversrc="../images/navi_3_on.gif" alt="SHOP" class='navi_main_obj' subcode='3' /></a>
+        </li>
+		<li>
+            <a href="/?act=board&bbs_code=notice"><img src="../images/navi_4.gif" oversrc="../images/navi_4_on.gif" alt="COMMUNITY" class='navi_main_obj' subcode='4' /></a>
+        </li>
+	</ul>
+
+	<div class="navi_sub_1 navi_sub" style='display:none;'>
+		<ul class="navi_sub_menu">
+			<li><a href="/?act=info.page&pcode=greeting">About Company</a></li>
+			<li><a href="/?act=info.page&pcode=sub0102">History</a></li> 
+			<li><a href="/?act=info.page&pcode=map">Directions</a></li>
+		</ul>
+	</div>
+
+	<div class="navi_sub_2 navi_sub" style='display:none;'>
+        <ul class="navi_sub_menu">
+			<li><a href="/?act=shop.goods_list&GC=GD0000">Collection</a></li>
+			<li><a href="/?act=board&bbs_code=sub0202">Item</a></li>
+		</ul>
+    </div>
+
+	<div class="navi_sub_3 navi_sub" style='display:none;'>
+		<ul class="navi_sub_menu">
+            <li><a href="?act=gallery.page&pcode=sub0301">Korea</a></li>
+            <li><a href="?act=gallery.page&pcode=sub0302">Japan</a></li>
+		</ul>
+	</div>
+
+	<div class="navi_sub_4 navi_sub" style='display:none;'>
+		<ul class="navi_sub_menu">
+			<li><a href="/?act=board&bbs_code=notice">Notice</a></li>
+			<li><a href="/?act=gallery.page&pcode=sub0402">Photo Gallery</a></li>
+		</ul>
+	</div>
+</div>
+<!--//네비--><!--L_TOP_MENU]]]--></div>
+			<div id="login"><!--L_TOP_GNB[[[--><ul>
+	<li><a href="/">HOME</a></li>	
+	<li><a href="/?act=user.user_login">LOGIN</a></li> 	
+	<li><a href="/?act=user.user_join_agree">JOIN</a></li> 
+	
+	<li><a href="/?act=info.sitemap">SITEMAP</a></li>
+</ul><!--L_TOP_GNB]]]--></div>
+		</div>
+	</div>
+	<div id="sub_visual">
+		<img src="/images/kor03-15-0266/sub/sub_img_01.jpg" alt="sub visual" />
+	</div>
+	<!--[[AREA_TOP_END]]-->
+	
+	<div id="container">
+		<!--[[AREA_LEFT_START]]-->
+		<div id="leftmenu"><!--L_LEFT_MENU[[[--><!--서브메뉴-->
+<h2><img src="/images/kor03-15-0266/sub/leftmenu2.gif" alt="PRODUCT" /></h2>
+<ul class="subNavi">
+	<li>
+		<a href="?act=shop.goods_list&GC=GD0000"><img src="/images/kor03-15-0266/sub/left_2_1_on.gif" alt="Collection"></a>
+	</li>
+	<li>
+		<a href="?act=board&bbs_code=sub0202"><img src="/images/kor03-15-0266/sub/left_2_2.gif" alt="Item"></a>
+	</li>
+</ul>
+<!--//서브메뉴--><!--L_LEFT_MENU]]]--></div>
+		<!--[[AREA_LEFT_END]]-->
+		<!--[[AREA_BODY_START]]-->
+		<div id="contents"><!--BODY[[[--><!-- ########## 제품관리 3  ############ -->
+<style type="text/css">
+#goods_list_type3 div,#goods_list_type3 p,#goods_list_type3 h1,#goods_list_type3 h2,#goods_list_type3 h3,#goods_list_type3 h4,#goods_list_type3 h5,#goods_list_type3 h6,#goods_list_type3 ul,#goods_list_type3 ol,#goods_list_type3 li,#goods_list_type3 dl,#goods_list_type3 dt,#goods_list_type3 dd,#goods_list_type3 table,#goods_list_type3 th,#goods_list_type3 td,#goods_list_type3 form,#goods_list_type3 fieldset,#goods_list_type3 legend,#goods_list_type3 input,#goods_list_type3 textarea,#goods_list_type3 a,#goods_list_type3 button,#goods_list_type3 select { margin:0;padding:0;}
+#goods_list_type3 td,#goods_list_type3 th,#goods_list_type3 div,#goods_list_type3 span,#goods_list_type3 input,#goods_list_type3 select,#goods_list_type3 textarea,#goods_list_type3 button,#goods_list_type3 table { font-family:'NanumGothic','돋움',dotum,Verdana,AppleGothic,Arial,Helvetica,sans-serif;font-size:12px; color:#666; line-height:16px; }
+#goods_list_type3 img, #goods_list_type3 th, #goods_list_type3 td, #goods_list_type3 fieldset,#goods_list_type3 iframe { border:0;}
+#goods_list_type3 img { vertical-align:top;}
+#goods_list_type3 li { list-style:none;}
+#goods_list_type3 em,#goods_list_type3 address {font-style:normal;}
+#goods_list_type3 input,#goods_list_type3 select,#goods_list_type3 button {vertical-align:middle;}
+
+/*common add */
+#goods_list_type3 caption,#goods_list_type3 legend,#goods_list_type3 .blind {visibility:hidden; overflow:hidden; position:absolute; top:0; left:-999em; width:0; height:0; font-size:0; line-height:0; text-align:left;}
+
+/* input */
+#goods_list_type3 button { margin:0; *margin:0 2px; padding:0; cursor:pointer; border:0; vertical-align:middle; background-repeat:no-repeat; background-position:top left; }
+#goods_list_type3 textarea { height:120px; border:1px solid #cecece;}
+#goods_list_type3 select{ height:26px; padding:2px; border:1px solid #cecece; /*font-size:12px; color:#444;*/ vertical-align:middle;}
+#goods_list_type3 table { border-collapse:collapse; border-spacing:0;}
+#goods_list_type3 hr {display:none;}
+
+/* link */
+#goods_list_type3 a:link { color:#666; text-decoration: none; }
+#goods_list_type3 a:visited {color:#666; text-decoration: none;}
+#goods_list_type3 a:hover { color:#0b96d4; text-decoration: underline;}
+#goods_list_type3 a:active { color:#0b96d4; text-decoration: none;}
+
+#goods_list_type3 { width:100%; margin:0; }
+#goods_list_type3 table {width:100%; margin:0 auto;}
+
+#goods_list_type3 .cate_navi {width:100%; margin-top:30px;}
+#goods_list_type3 .category {width:100%; margin-top:22px;}
+#goods_list_type3 .category li{display:table-cell; width:122px; border:1px solid #dadada; padding:10px 0 12px; text-align:center; color:#969696;}
+#goods_list_type3 .category li.on {border-bottom:1px solid #0a6fcc; background-color:#5da8ed;}
+#goods_list_type3 .category li.on a {color:#fff;}
+#goods_list_type3 .category li span.f_11 {font-size:11px;}
+#goods_list_type3 .category li.on span.f_11 {font-size:11px;color:#fff;}
+
+#goods_list_type3 .board_top {width:100%; overflow:hidden; background-color:#f7f7f7; border:1px solid #e6e6e6; padding:8px 0; margin-top:22px;}
+#goods_list_type3 .board_top .bold {float:left; width:100px; margin:4px 0 0 10px;}
+#goods_list_type3 .board_top .f_search {float:right; width:330px; text-align:right; margin-right:7px;}
+#goods_list_type3 .board_top .board_input { border:1px solid #cecece; height:24px; width:180px;}
+
+#goods_list_type3 .board { width:100%; margin-top:22px; border-top:1px solid #464646;}
+#goods_list_type3 .board td { color:#797979; padding:5px; border-bottom:1px solid #dadada; word-wrap: break-word; word-break: break-all;}
+
+#goods_list_type3 .goods_con {width:165px; margin:8px;}
+#goods_list_type3 .board td:nth-chid(1) .goods_con {margin-left:15px;}
+#goods_list_type3 .board td:nth-chid(4) .goods_con {margin-right:15px;}
+#goods_list_type3 .goods_con .thumb {text-align:center; display:block; margin:0 auto;}
+#goods_list_type3 .goods_con dl{margin:5px auto; text-align:center;}
+#goods_list_type3 .goods_con .tit {padding-bottom:2px; color:#444; font-weight:600;}
+#goods_list_type3 .goods_con .tit11 {padding-bottom:2px; color:#444; font-weight:600; font-size: 11px;}
+#goods_list_type3 .goods_con .icon {padding:5px 0;}
+#goods_list_type3 .btnGo {margin:0 auto;}
+#goods_list_type3 .btnGo button {cursor: pointer;}
+#goods_list_type3 .btnGo button:nth-child(2){margin-left:1px;}
+/* Button */
+#goods_list_type3 .btn_search { display:inline-block; color:#333; padding:4px 16px 6px 26px; background:url(/images/basic_blue/board/btn_search_bg.gif) no-repeat 0 0;}
+#goods_list_type3 .btn_write { display:inline-block; background:#5c5e63; padding:3px 8px 4px;}
+#goods_list_type3 .btn_list  { display:inline-block; background:#fff; border:1px solid #93979c;padding:2px 7px 3px;}
+#goods_list_type3 .btn_txt01 {color:#fff; font-size:11px; letter-spacing:-0.7px;}
+#goods_list_type3 .btn_txt02 {color:#2c2d2f; font-size:11px; letter-spacing:-0.7px;}
+/* font Color */
+#goods_list_type3 .txt_blue { font-weight:bold; color:#7ab5df; }
+#goods_list_type3 .txt_orange { font:bold 12px verdana; color:#ff7e00;}
+#goods_list_type3  .board .red {font:bold 11px verdana; color:#f52c2e; letter-spacing:-0.5px;}
+#goods_list_type3  .board .blue {font:normal 11px verdana; color:#7ab5df; letter-spacing:-0.5px;}
+
+/* Paging */
+#goods_list_type3 .paginate_regular {padding:15px 0;text-align:center;line-height:normal;}  
+#goods_list_type3 .paginate_regular a,  
+#goods_list_type3 .paginate_regular strong{display:inline-block;position:relative;margin:0 -2px;padding:2px 8px;font-weight:600;line-height:normal;text-decoration:none;vertical-align:middle;}  
+#goods_list_type3 .paginate_regular a:hover,  
+#goods_list_type3 .paginate_regular a:active,  
+#goods_list_type3 .paginate_regular a:focus {background-color:#f8f8f8;}  
+#goods_list_type3 .paginate_regular strong{color:#f60;}  
+#goods_list_type3 .paginate_regular .direction{font-weight:normal;color:#767676;white-space:nowrap;}  
+#goods_list_type3 .paginate_regular .direction span{font-weight:bold;font-size:14px;}  
+#goods_list_type3 .paginate_regular .direction:hover,  
+#goods_list_type3 .paginate_regular .direction:active,  
+#goods_list_type3 .paginate_regular .direction:focus {background-color:#fff;color:#333;}
+#goods_list_type3 .linet{text-decoration:line-through;}
+</style>
+<script type="text/javascript">
+
+function goUrl(url){
+
+	if(url){
+	
+		window.location.href = url;
+	}
+	
+}
+
+function upCart(good_seq, mode){
+
+		var auth_mode = '1';
+		var isLogin = '';
+		var good_cate = 'GD0000';
+		var item_cnt = 1;
+
+		if(!good_seq){
+			Durian.alert("상품코드값이 없습니다.");
+			return false;
+		}
+
+		if('2' == auth_mode && !isLogin){
+
+			if(true == checkOptions(good_seq)){
+				
+
+				Durian.confirm("필수옵션이 있는 상품입니다. 옵션설정화면으로 이동합니다.", function (){
+				
+					window.location.href = './?act=shop.goods_view&GS='+ good_seq +'&GC=' + good_cate;
+					
+					
+				}, function (){});
+				
+				return;				
+			}
+		
+			Durian.confirmShopLogin("로그인 해주세요.", 
+				function (){
+					var url = '?act=user.user_login&reurl=%2F%3Fact%3Dshop.goods_list%26GC%3DGD0000';
+					window.location.replace(url);
+					return;
+				},
+				function (){
+					var f = jQuery("#goodsForm").get()[0];
+					f.act.value = 'shop.guest_autologin';
+					f.good_seq.value = good_seq;
+					f.good_cate.value = good_cate;
+					f.item_cnt.value = item_cnt;
+					if(mode){
+						f.mode.value = mode;
+					}				
+					f.submit();
+					return;
+				}
+			);
+			
+			return;
+		}
+
+		if(true == checkOptions(good_seq)){
+				
+
+				Durian.confirm("필수옵션이 있는 상품입니다. 옵션설정화면으로 이동합니다.", function (){
+				
+					window.location.href = './?act=shop.goods_view&GS='+ good_seq +'&GC=' + good_cate;
+					
+					
+				}, function (){});
+				
+				return;				
+			}
+
+		
+		
+		var f = jQuery("#goodsForm").get()[0];
+		f.act.value = 'shop.upcart';
+		f.good_seq.value = good_seq;
+		f.good_cate.value = good_cate;
+		f.item_cnt.value = item_cnt;
+		if(mode){
+			f.mode.value = mode;
+		}		
+		f.submit();
+	}
+
+
+// if required options exist, return true, or false.
+function checkOptions(good_seq){
+	
+	var $ = jQuery;
+	var _ret = false;
+	
+	$.ajax({
+			async:false,
+			type: "POST",
+			dataType: "html", 
+			url: "./?act=shop.check_options",
+			data: "good_seq=" + good_seq,
+			success: function(ret){
+				
+				if('1000' == ret){
+					_ret = true;
+				}
+			},
+			error: function (xmlhttp, status, e){
+				
+				if(window.console){
+					window.console.log(status);
+					window.console.dir(e);
+				}
+			}
+		});
+		
+	return _ret;
+}
+
+
+
+</script>
+<form method="post" action="/" id="goodsForm" name="goodsForm" style="margin:0px;">
+	<input type="hidden" name="act" value="">
+	<input type="hidden" name="good_seq" value="">
+	<input type="hidden" name="good_cate" value="">
+	<input type="hidden" name="item_cnt" value="">
+	<input type="hidden" name="mode" value="">
+</form>
+
+ <!-- 타이틀영역 -->
+	<div class="con_title">
+	<p>HOME &gt; PRODUCT &gt; <strong>Collection</strong></p>
+	<h3>Collection</h3>
+</div>
+<div class="con_txt">
+<div id="goods_list_type3">    
+
+	<!-- 카테고리영역 -->	
+	<div class="category">
+											<ul>
+						
+				<li class="on">				
+					<a href="../?act=shop.goods_list&GC=GD0000">Collection</a>
+					<span class="f_11">(0)</span>
+				</li>
+										
+	</div>
+	<!-- // 카테고리 -->	
+		
+	<!-- 상단 검색바 -->
+	<div class="board_top">
+		<div class="bold">
+			<p>총 <span class="txt_orange">0</span>건</p>
+		</div>
+		<!--검색-->	
+	<form name="schForm" action="../" method="get">
+	<input type="hidden" id="act"  name="act"  value="shop.goods_list">
+	<input type="hidden" id="GC"   name="GC"   value="GD0000">
+	<input type="hidden" id="page" name="page" value="">
+		<div class="f_search">
+			<input name="ss" value="" type="text" class="board_input" />				
+			<a><button type='submit' class="btn_search btn_txt">검색</button></a>
+		</div>
+		</form>
+		<!--//검색-->
+	</div>	
+	<!-- //상단 검색바 -->
+	
+	<!-- 상품 목록 -->	
+	<div class="board">		
+		<table width="100%" cellpadding="0" cellspacing="0">
+					<tr>
+		<td height="50" align="center">등록된 상품이 없습니다.</td>
+	</tr>
+				
+		</table>
+	</div>	
+	<!--페이지넘버-->
+	<div class="paginate_regular"></div>
+	<!--//페이지넘버-->		
+</div>
+
+</div><!--BODY]]]--></div>
+		<!--[[AREA_BODY_END]]-->
+	</div>	
+	<!--[[AREA_BOTTOM_START]]-->
+	<div id="footer"><!--L_FOOTER[[[--><style type="text/css">
+.footer_area { width:980px; margin:0 auto; }
+.footer_area:after { content:""; display:block; clear:both; }
+.footer_logo { float:left; width:211px; }
+.footer_info { float:right;}
+
+.footer_info ul { float:right; height:25px; }
+.footer_info li { display:inline; background:url(/images/footer_menu_line.gif) left center no-repeat; padding:0 5px; }
+.footer_info li:first-child { background:none; padding-left:0px; }
+.footer_info li:last-child { padding-right:0px; }
+.footer_info .address { clear:both; text-align:right; }
+.footer_info .copyright { padding-top:5px; font-size:10px; }
+</style>
+
+<div class="footer_area">	
+	<div class="footer_logo"><img src="/images/logo.png" alt="하단로고" /></div>
+	<div class="footer_info">
+		<ul>
+			<li><a href="/?act=info.provision">이용약관</a></li>			
+			<li><a href="/?act=info.privacy">개인정보취급방침</a></li>				
+			<li><a href="/?act=info.no_email_collect">이메일주소 무단수집거부</a></li>			
+			<li><a href="/?act=info.page&pcode=map">오시는길</a></li>	
+		</ul>
+		<div class="address">
+			(우: 08378) 서울특별시 구로구 디지털로34길 43(구로동, 코오롱싸이언스밸리1차)  | 대표: 홍길동<br>			
+            사업자등록번호: 110-81-41272 | TEL: 02-1234-5678 | H.P : 010-1234-5678 | FAX: 02-1234-5679 | E-mail: dream@whois.co.kr			<p class="copyright">COPYRIGHT &copy; <strong>(주) 후이즈드림</strong>.  ALL RIGHTS RESERVED.</p>
+		</div>		
+	</div>	
+</div><!--L_FOOTER]]]--></div>
+	<!--[[AREA_BOTTOM_END]]-->
+</div>
+</body>
+</html><div style="display:none;"><!--
+---------------------------
+ START 2017-09-25 15:45:40
+ INIT            : 0.01332
+ EXEC            : 0.00380
+ LAYOUT          : 0.30255
+ END             : 0.01013
+---------------------------
+ TOTAL           : 0.32980
+---------------------------
+--></div>

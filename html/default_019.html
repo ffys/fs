@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>사이트 준비중</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="../no/__020.htm">
+    <!-- DEFAULT HEAD AREA : 빌더 기본 정보입니다. 해당 내용 삭제 시 문제가 발생할 수 있습니다. -->
+
+    <link href="../css/common.css" type="text/css" rel="stylesheet">
+    <link href="../css/jquery.theme.css" type="text/css" rel="stylesheet">
+
+    <script type="text/javascript" src="../js/jquery.custom.js"></script>
+    <script type="text/javascript" src="../js/jquery.i18n.properties-min-1.0.9.js"></script>
+
+    <script type="text/javascript" src="../js/durian.common.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.custom.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <!-- /DEFAULT HEAD AREA -->
+    <!-- user common css -->
+    <link href="../css/common_001.css" type="text/css" rel="stylesheet">
+    <!-- /user common css -->
+
+    <style type="text/css">
+        /* Code tidied up by ScrapBook */
+        #sub_visual {
+            width: 100%;
+            height: 210px;
+            text-align: center;
+            background: rgb(106, 106, 108) none repeat scroll 0% 0%;
+        }
+
+        #container {
+            width: 1000px;
+            margin: 25px auto 50px;
+        }
+
+        #container::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(255, 255, 255);">
+<div id="wrap">
+    <!--[[AREA_TOP_START]]-->
+    <div id="header">
+        <div>
+            <h1 id="logo"><!--L_SITE_LOGO[[[-->
+                <div id="L_SITE_LOGO">
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                        <tr>
+                            <td height="70" align="center">
+                                <a href="../index.html"><img src="../images/logo.png" border="0"></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div><!--L_SITE_LOGO]]]--></h1>
+            <div id="topmenu">
+                <script type="text/javascript">
+
+                    var _varCurrentAct = 'user.user_find_pw//';
+
+                    jQuery(document).ready(function () {
+                        jQuery('#navi .navi_main .navi_main_obj').each(function () {
+                            if (!jQuery(this).attr('orgsrc')) {
+                                jQuery(this).attr('orgsrc', jQuery(this).attr('src'));
+                            }
+
+                            jQuery(this).hover(function () {
+                                _fcNaviControl(jQuery(this).attr('subcode'));
+                            });
+                        });
+
+                        var curSubCode = _fcNaviControlMap[_varCurrentAct];
+
+                        if (curSubCode) {
+                            _fcNaviControl(curSubCode);
+                        }
+                    });
+
+                    /**************************************************
+                     *
+                     * # 상단메뉴 매칭 정보(URL 매개변수 사용)
+                     *
+                     * 구성: 'act / pcode / bbs_code':'subcode 번호'
+                     *
+                     **************************************************/
+                    var _fcNaviControlMap = {
+                        'info.page/greeting/': '',
+                        'info.page/sub0102/': '',
+                        'info.page/map/': '',
+                        'info.page/curriculum/': '',
+                        'info.page/teacher/': '',
+                        'board//webzine': '',
+                        'board//notice': '',
+                        'board//faq': '',
+                        'mypage.my_qna/list/': ''
+                    };
+
+                    var _fcNaviControl = function (selCode) {
+
+                        if (!selCode) return;
+
+                        jQuery('#navi .navi_main .navi_main_obj').each(function () {
+                            jQuery('#navi .navi_sub_' + jQuery(this).attr('subcode')).hide();
+                            jQuery(this).attr('src', jQuery(this).attr('orgsrc'));
+
+                        });
+
+                        jQuery('#navi .navi_main .navi_main_obj[subcode=' + selCode + ']').attr('src', jQuery('#navi .navi_main .navi_main_obj[subcode=' + selCode + ']').attr('oversrc'));
+                        jQuery('#navi .navi_sub_' + selCode).show();
+
+                    };
+                </script>
+
+                <div id="navi">
+                    <ul class="navi_main">
+                        <li>
+                            <a href="about.html"><img src="../images/navi_1.gif" oversrc="../images/navi_1_on.gif"
+                                                      alt="COMPANY" class="navi_main_obj" subcode="1"></a>
+                        </li>
+                        <li>
+                            <a href="product.html"><img src="../images/navi_2.gif" oversrc="../images/navi_2_on.gif"
+                                                        alt="PRODUCT" class="navi_main_obj" subcode="2"></a>
+                        </li>
+                        <li style="margin-left: 390px;">
+                            <a href="request.html"><img src="../images/navi_3.gif" oversrc="../images/navi_3_on.gif"
+                                                        alt="SHOP" class="navi_main_obj" subcode="3"></a>
+                        </li>
+                        <li>
+                            <a href="contact.html"><img src="../images/navi_4.gif" oversrc="../images/navi_4_on.gif"
+                                                        alt="COMMUNITY" class="navi_main_obj" subcode="4"></a>
+                        </li>
+                    </ul>
+
+                    <div class="navi_sub_1 navi_sub" style="display: none;">
+
+                    </div>
+
+                    <div class="navi_sub_2 navi_sub" style="display: none;">
+                        <ul class="navi_sub_menu">
+                            <li><a href="product.html">Collection</a></li>
+                            <li><a href="default_007.html">Item</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="navi_sub_3 navi_sub" style="display: none;">
+                        <ul class="navi_sub_menu">
+                            <li><a href="request.html">NOTICE</a></li>
+                            <li><a href="default_008.html">Q&A</a></li>
+                        </ul>
+                    </div>
+
+                    <!--<div class="navi_sub_4 navi_sub" style="display: none;">		<ul class="navi_sub_menu">			<li><a href="#">Notice</a></li>			<li><a href="default_008.html">Photo Gallery</a></li>		</ul>	</div>-->
+                </div>
+                <!--//네비--><!--L_TOP_MENU]]]--></div>
+            <div id="login"><!--L_TOP_GNB[[[-->
+                <ul>
+                   <li><a href="../index.html">HOME</a></li>
+
+
+                    <li><a href="default_011.html">SITEMAP</a></li>
+                </ul><!--L_TOP_GNB]]]--></div>
+        </div>
+    </div>
+    <div id="sub_visual">
+        <img src="../images/sub_img_01.jpg" alt="sub visual">
+    </div>
+    <!--[[AREA_TOP_END]]-->
+
+    <!--[[AREA_BODY_START]]-->
+    <div id="container"><!--BODY[[[-->
+        <style type="text/css">
+            /* Code tidied up by ScrapBook */
+            .contents {
+                width: 100%;
+                margin: 0px auto 50px;
+            }
+
+            .contents .con_title {
+                width: 100%;
+                height: 58px;
+                overflow: hidden;
+                margin-bottom: 10px;
+                vertical-align: top;
+                border-bottom: medium none;
+            }
+
+            .contents .con_title h3 {
+                float: left;
+            }
+
+            .contents .con_title p {
+                float: right;
+                margin-right: 0px;
+            }
+
+            .contents th, .contents td {
+                border-bottom: 1px solid rgb(223, 223, 223);
+                height: 50px;
+            }
+
+            .contents th {
+                background: rgb(249, 249, 249) none repeat scroll 0% 0%;
+                font-weight: bold;
+                text-align: left;
+                padding-left: 15px;
+            }
+
+            .contents td {
+                padding-left: 11px;
+            }
+
+            .title_txt {
+                border-top: 1px solid rgb(127, 127, 127);
+                border-bottom: 1px solid rgb(223, 223, 223);
+                padding: 15px 0px;
+            }
+
+            .title_txt img {
+                padding-right: 3px;
+                vertical-align: middle;
+            }
+
+            .inp_01 {
+                width: 283px;
+                height: 24px !important;
+                border: 1px solid rgb(223, 223, 223);
+            }
+
+            .inp_02 {
+                width: 131px;
+                height: 24px !important;
+                border: 1px solid rgb(223, 223, 223);
+            }
+
+            .sh_ok p, .sh_no p {
+                width: 100%;
+                border: 1px solid rgb(223, 223, 223);
+                background: rgb(245, 245, 245) none repeat scroll 0% 0%;
+                padding: 40px 0px;
+                line-height: 22px;
+            }
+
+            .mt35 {
+                margin-top: 35px;
+            }
+
+            .mt40 {
+                margin-top: 40px;
+            }
+
+            .pt30 {
+                padding-top: 30px;
+            }
+
+            .taC {
+                text-align: center;
+            }
+
+            .taR {
+                text-align: right;
+            }
+
+            .c_red {
+                color: rgb(247, 30, 30);
+            }
+        </style>
+
+        <script type="text/javascript" src="../js/sky.form.checker.js"></script>
+        <script>
+            var url_join = './?act=user.user_join_agree';
+            var url_find_id = './?act=user.user_find_id';
+            var url_find_pw = './?act=user.user_find_pw';
+            var url_pop_passwd = './?act=user.popup_passwd_modify&ch=pop';
+
+            var user_id = '';
+            var user_mobile = '';
+            var user_email = '';
+
+            var url_login = './?act=user.user_login';
+
+            var difference = 300;
+            var now_counting;
+            var interval_idx;
+
+            function init() {
+                // 이벤트 처리
+                if ($('user_join') != null) {
+                    $l($('user_join'), 'click', onButtonsClick);
+                }
+                if ($('find_id') != null) {
+                    $l($('find_id'), 'click', onButtonsClick);
+                }
+                if ($('find_pw') != null) {
+                    $l($('find_pw'), 'click', onButtonsClick);
+                }
+                if ($$('sub_div#', 1) != null) {
+                    $l($$('sub_div#', 1), 'click', certify_type_dsp);
+                }
+                if ($('btn_user_login') != null) {
+                    $l($('btn_user_login'), 'click', onButtonsClick);
+                }
+                if ($('btn_find_pw') != null) {
+                    $l($('btn_find_pw'), 'click', onButtonsClick);
+                }
+                if ($('check_auth') != null) {
+                    $l($('check_auth'), 'click', check_auth_key);
+                }
+                if ($('send_auth_num') != null) {
+                    $l($('send_auth_num'), 'click', request_auth);
+                }
+                if ($('take_by_email') != null) {
+                    $l($('take_by_email'), 'click', ajaxTempPasswd);
+                }
+                if ($('take_by_mobile') != null) {
+                    $l($('take_by_mobile'), 'click', ajaxTempPasswd);
+                }
+                if ($('pop_passwd_modify') != null) {
+                    $l($('pop_passwd_modify'), 'click', modUserPasswd);
+                }
+                if ($('user_jumin') != null) {
+                    $l($('user_jumin'), 'keyup', onCheckLength);
+                }
+                if ($('user_foreign') != null) {
+                    $l($('user_foreign'), 'keyup', onCheckLength);
+                }
+
+                $l($qList('.btn_check'), 'click', onCheckClick);
+            }
+
+            $load(init);
+
+
+            function onCheckClick(evt, obj) {
+                Event.stop(evt);
+                var find_type = obj.getAttribute('find_type');
+
+                form = document.forms['form_domestic_check'];
+
+                if (find_type == 'email') {
+                    if (!form.elements['email_user_name'].value) {
+                        Durian.alertCloseFocusObject = form.email_user_name;
+                        Durian.alert('이름을 입력해 주세요.');
+                        return false;
+                    }
+                    if (!form.elements['email_user_id'].value) {
+                        Durian.alertCloseFocusObject = form.email_user_id;
+                        Durian.alert('아이디를 입력해 주세요.');
+                        return false;
+                    }
+                    if (!form.elements['user_email1'].value) {
+                        Durian.alertCloseFocusObject = form.user_email1;
+                        Durian.alert('이메일 정보를 입력해 주세요.');
+                        return false;
+                    }
+                    if (!form.elements['user_email2'].value) {
+                        Durian.alertCloseFocusObject = form.user_email2;
+                        Durian.alert('이메일 정보를 입력해 주세요.');
+                        return false;
+                    }
+                } else if (find_type == 'jumin') {
+                    if (!form.elements['jumin_user_name'].value) {
+                        Durian.alertCloseFocusObject = form.jumin_user_name;
+                        Durian.alert('이름을 입력해 주세요.');
+                        return false;
+                    }
+                    if (!form.elements['jumin_user_id'].value) {
+                        Durian.alertCloseFocusObject = form.jumin_user_id;
+                        Durian.alert('아이디를 입력해 주세요.');
+                        return false;
+                    }
+                    if (!form.elements['user_jumin1'].value) {
+                        Durian.alertCloseFocusObject = form.user_jumin1;
+                        Durian.alert('주민등록번호를 입력해 주세요.');
+                        return false;
+                    }
+                    if (!form.elements['user_jumin2'].value) {
+                        Durian.alertCloseFocusObject = form.user_jumin2;
+                        Durian.alert('주민등록번호를 입력해 주세요.');
+                        return false;
+                    }
+                }
+                form.elements['find_type'].value = find_type;
+                fc_form_domestic_check.doSubmit();
+            }
+
+            function onButtonsClick(evt, obj) {
+                Event.stop(evt);
+                var type = obj.getAttribute('id');
+                var send_url = '';
+
+                switch (type) {
+                    case 'user_join' :
+                        send_url = url_join;
+                        break;
+                    case 'find_id' :
+                        send_url = url_find_id;
+                        break;
+                    case 'find_pw' :
+                        send_url = url_find_pw;
+                        break;
+                    case 'btn_user_login' :
+                        send_url = url_login;
+                        break;
+                    case 'btn_find_pw' :
+                        send_url = url_find_pw;
+                        break;
+                }
+
+                if (send_url != '') {
+                    location.href = send_url;
+                }
+            }
+
+            // check move length
+            function onCheckLength(evt, obj) {
+                Event.stop(evt);
+
+                var id = obj.getAttribute('id');
+                var form, el, next_el;
+
+                switch (id) {
+                    case 'user_jumin' :
+                        form = document.forms['form_domestic_check'];
+                        break;
+
+                    case 'user_foreign' :
+                        form = document.forms['form_foreign_check'];
+                        break;
+                }
+                el = form.elements['user_jumin1'];
+                next_el = form.elements['user_jumin2'];
+
+                autoNext(el, next_el, 6);
+            }
+
+            // move next tab
+            function autoNext(el, next_el, limit) {
+                if (el.value.length == limit) {
+                    next_el.focus();
+                }
+            }
+
+            // ******************** 비밀번호 찾기 성공시 시작 *********************//
+            // 비밀번호 전인지 직접찾기 인지확인
+            function certify_type_dsp(evt, obj) {
+                Event.stop(evt);
+
+                var type = obj.getAttribute('seq');
+
+                clearInterval(interval_idx);
+                reset_time_div();
+
+                if (type == 'SEND') {
+                    Element.show('send_div');
+                    Element.hide('mobile_div');
+                } else if (type == 'MOBILE') {
+                    Element.show('mobile_div');
+                    Element.hide('send_div');
+                }
+
+                certify_type = type;
+            }
+
+            // 인증번호송출 5분안에 입력해야함
+            // TODO : 인증번호송출 ajax추가 , 전송/재전송/입력시간초과시
+            function request_auth() {
+                if (!now_counting) {
+                    // 새전송
+                    interval_idx = self.setInterval("auth_time_count()", 1000); // 함수 ch()를 0.5초 간격으로 읽고 정지를 위해 i에 넣어둔다.
+                } else {
+                    // 재전송
+                    // TODO 기존키 삭제, 새로운키 받음
+                    reset_time_div();
+                }
+                //auth_time_count ()
+            }
+
+            // 인증키 입력받아 확인
+            function check_auth_key() {
+                var form = document.forms['form_auth'];
+                var user_auth_key = $v(form.elements['user_auth_key']);
+
+                // TODO : 인증키가 맞는지 확인
+
+                if (!now_counting) {
+                    Durian.alert('인증번호를 전송하지 않았습니다.');
+                    reset_time_div();
+                    $vset(form.elements['user_auth_key'], '');
+                    return false;
+                }
+
+                // 인증키가 맞다면
+                if (user_auth_key) {
+                    clearInterval(interval_idx);
+                    $vset(form.elements['auth_check'], 1);
+                    reset_time_div();
+                    $('time_div').innerHTML = '인증되었습니다.';
+                } else {
+                    // TODO : 인증번호가 맞지 않을시 키를 재전송 받을것인지 시간을 다 소비할때 까지 키를 유효하게 사용할것인지
+                    clearInterval(interval_idx);
+                    reset_time_div();
+                    $('time_div').innerHTML = '인증번호가 맞지 않습니다.';
+                }
+            }
+
+            // 사용자에게 남은 입력시간 보여줌
+            function auth_time_count() {
+                now_counting = 1;
+
+                if (difference == 0) {
+                    $('time_div').innerHTML = '입력시간이 초과되었습니다!';
+                }
+
+                if (difference > 0) {
+                    var minutes = parseInt(difference / 60);
+                    var secs = difference % 60;
+
+                    $('time_div').innerHTML = '남은시간 : ' + minutes + '분 ' + secs + '초';
+
+                    difference--;
+                }
+            }
+
+            // 남은시간 초기화
+            function reset_time_div() {
+                $('time_div').innerHTML = '';
+                difference = 300;
+                now_counting = 0;
+            }
+
+            // ajax 처리2 : ajax 객체생성
+            function ajaxTempPasswd(evt, obj) {
+                Event.stop(evt);
+
+                var id = obj.getAttribute('id');
+                var type;
+
+                switch (id) {
+                    case 'take_by_email' :
+                        type = 'EMAIL';
+                        break;
+                    case 'take_by_mobile' :
+                        type = 'MOBILE';
+                        break;
+                }
+
+                if (user_id != '' && type != '') {
+                    ajaxObj = new Ajax({
+                        url: './',
+                        method: 'post',
+                        type: 'JSON',
+                        param: {
+                            'act': 'user.user_find_pw_ajax',
+                            'UID': user_id,
+                            'UM': user_mobile,
+                            'UE': user_email,
+                            'TP': type
+                        },
+                        callback: ajaxTempPasswdCallback
+                    });
+                }
+            }
+
+            // 비밀번호전송후
+            function ajaxTempPasswdCallback(r) {
+                if (r.isSuccess()) {
+                    var data = r.value;
+
+                    Durian.alert(data.result_str);
+
+                    // TODO: ajax의 내용중에 passwd 삭제
+                    $('passwd').innerHTML = data.passwd;
+                }
+            }
+
+            // 비밀번호변경 팝업
+            function modUserPasswd() {
+                return Durian.openWin('passwd_modify', url_pop_passwd + user_id, 600, 600, 'yes');
+            }
+            // ******************** 비밀번호 찾기 성공시 끝 *********************//
+        </script>
+
+
+        <form name="form_domestic_check" method="post" action="http://kor03-15-0266.whoisgh.com/?act=user.user_find_pw">
+            <input name="chk_type" value="domestic" type="hidden">
+            <input name="find_type" value="" type="hidden">
+
+            <!-- 비밀번호 찾기 입력폼 시작 -->
+            <div class="contents">
+                <div class="con_title">
+                    <h3><img src="../images/title_pwfine.gif" alt="비밀번호 찾기"></h3>
+                    <p class="mt35 taR">Home &gt; 마이페이지 &gt; <strong>비밀번호 찾기</strong></p>
+                </div>
+                <div class="title_txt">
+                    <img src="../images/btn/icon_excla.gif" alt="">
+                    가입 시 입력한 <span class="c_red">이메일</span> 정보로 회원 비밀번호를 조회할 수 있습니다.
+                </div>
+                <table width="100%" cellspacing="0" cellpadding="0">
+                    <colgroup>
+                        <col style="width: 178px;">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th>이름</th>
+                        <td><input name="email_user_name" value="" class="inp_01" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>아이디</th>
+                        <td><input name="email_user_id" value="" class="inp_01" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>이메일</th>
+                        <td>
+                            <input name="user_email1" value="" style="ime-mode: disabled;" class="inp_02" type="text"> @
+                            <input name="user_email2" value="" style="ime-mode: disabled;" class="inp_02" type="text">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="taC mt40">
+                    <a href="#" class="btn_check" find_type="email"><img src="../images/btn/btn_submit.gif"
+                                                                         alt="확인"></a>
+                </div>
+            </div>
+        </form>
+        <!--BODY]]]--></div>
+    <!--[[AREA_BODY_END]]-->
+
+    <!--[[AREA_BOTTOM_START]]-->
+    <div id="footer"><!--L_FOOTER[[[-->
+
+        <div class="footer_area">
+            <div class="footer_logo"><img src="../images/logo.png" alt="하단로고"></div>
+            <div class="footer_info">
+                <ul>
+                    <li><a href="default_012.html">이용약관</a></li>
+                    <li><a href="default_013.html">개인정보취급방침</a></li>
+                    <li><a href="default_014.html">이메일주소 무단수집거부</a></li>
+                    <li><a href="default_006.html">오시는길</a></li>
+                </ul>
+                <div class="address">
+                    (우: 08378) 서울특별시 구로구 디지털로34길 43(구로동, 코오롱싸이언스밸리1차) | 대표: 홍길동<br>
+                    사업자등록번호: 110-81-41272 | TEL: 02-1234-5678 | H.P : 010-1234-5678 | FAX: 02-1234-5679 | E-mail:
+                    dream@whois.co.kr <p class="copyright">COPYRIGHT © <strong>(주) 후이즈드림</strong>. ALL RIGHTS RESERVED.
+                </p>
+                </div>
+            </div>
+        </div><!--L_FOOTER]]]--></div>
+    <!--[[AREA_BOTTOM_END]]-->
+</div>
+
+
+<script type="text/javascript" src="../js/aes.js"></script>
+<script type="text/javascript" src="../js/rsa.js"></script>
+<script type="text/javascript" src="../js/WMSSL.js"></script>
+<script type="text/javascript" src="../js/WMSSL_EXTEND.js"></script>
+<script type="text/javascript">$load(function () {
+    WMSSL.connect("/ssl/server.php");
+    WMSSL.extend.loading();
+});</script>
+<script type="text/javascript"> var fc_form_domestic_check;
+var fc_form_domestic_check_data = {};
+function init_form_domestic_check() {
+    var fc = fc_form_domestic_check = new Form.Checker({'form': 'form_domestic_check'});
+    fc.form.useSSL = true;
+    if (typeof init_form_domestic_check_callback == 'function') {
+        init_form_domestic_check_callback(fc, fc_form_domestic_check_data);
+    }
+}
+$load(init_form_domestic_check); </script>
+<div style="display: none;"><!--
+---------------------------
+ START 2017-09-25 15:46:26
+ INIT            : 0.01077
+ EXEC            : 0.04344
+ LAYOUT          : 0.00729
+ END             : 0.00882
+---------------------------
+ TOTAL           : 0.07033
+---------------------------
+--></div>
+
+</body>
+</html>
