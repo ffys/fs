@@ -743,13 +743,15 @@ a:active {
     width: 100%;
 }
 .goods_info p{
-    padding: 10px;
+
     border-top: 2px #000 solid;
     border-bottom: 1px #999999 solid;
     overflow: auto;
 }
 
 .goods_info p span{
+    box-sizing: border-box;
+    padding: 10px;
     display: block;
     width: 50%;
     text-align: center;
@@ -757,6 +759,7 @@ a:active {
     font-size: 14px;
 }.goods_info p span:first-child{
     font-weight: bold;
+    background-color: #f2f2f2;
  }
  .goods_con img{
      max-width: 100%;
