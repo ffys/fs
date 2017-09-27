@@ -20,7 +20,9 @@
     <!-- user common css -->
     <link href="../css/common_001.css" type="text/css" rel="stylesheet">
     <!-- /user common css -->
-
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=YfPDV2tFSVPwykIKdgwBMDez63IaDkwt"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
 
 </head>
 
@@ -42,62 +44,7 @@
                     </table>
                 </div><!--L_SITE_LOGO]]]--></h1>
             <div id="topmenu">
-                <script type="text/javascript">
 
-                    var _varCurrentAct = 'board//notice';
-
-                    jQuery(document).ready(function () {
-                        jQuery('#navi .navi_main .navi_main_obj').each(function () {
-                            if (!jQuery(this).attr('orgsrc')) {
-                                jQuery(this).attr('orgsrc', jQuery(this).attr('src'));
-                            }
-
-                            jQuery(this).hover(function () {
-                                _fcNaviControl(jQuery(this).attr('subcode'));
-                            });
-                        });
-
-                        var curSubCode = _fcNaviControlMap[_varCurrentAct];
-
-                        if (curSubCode) {
-                            _fcNaviControl(curSubCode);
-                        }
-                    });
-
-                    /**************************************************
-                     *
-                     * # 상단메뉴 매칭 정보(URL 매개변수 사용)
-                     *
-                     * 구성: 'act / pcode / bbs_code':'subcode 번호'
-                     *
-                     **************************************************/
-                    var _fcNaviControlMap = {
-                        'info.page/greeting/': '',
-                        'info.page/sub0102/': '',
-                        'info.page/map/': '',
-                        'info.page/curriculum/': '',
-                        'info.page/teacher/': '',
-                        'board//webzine': '',
-                        'board//notice': '',
-                        'board//faq': '',
-                        'mypage.my_qna/list/': ''
-                    };
-
-                    var _fcNaviControl = function (selCode) {
-
-                        if (!selCode) return;
-
-                        jQuery('#navi .navi_main .navi_main_obj').each(function () {
-                            jQuery('#navi .navi_sub_' + jQuery(this).attr('subcode')).hide();
-                            jQuery(this).attr('src', jQuery(this).attr('orgsrc'));
-
-                        });
-
-                        jQuery('#navi .navi_main .navi_main_obj[subcode=' + selCode + ']').attr('src', jQuery('#navi .navi_main .navi_main_obj[subcode=' + selCode + ']').attr('oversrc'));
-                        jQuery('#navi .navi_sub_' + selCode).show();
-
-                    };
-                </script>
 
                 <div id="navi">
                     <ul class="navi_main">
@@ -111,7 +58,7 @@
                         </li>
                         <li style="margin-left: 390px;">
                             <a href="request.html"><img src="../images/navi_3.gif" oversrc="../images/navi_3_on.gif"
-                                                        alt="SHOP" class="navi_main_obj" subcode="3"></a>
+                                                        alt="REQUEST" class="navi_main_obj" subcode="3"></a>
                         </li>
                         <li>
                             <a href="#"><img src="../images/navi_4.gif" oversrc="../images/navi_4_on.gif"
@@ -125,15 +72,15 @@
 
                     <div class="navi_sub_2 navi_sub" style="display: none;">
                         <ul class="navi_sub_menu">
-                            <li><a href="product.html">Collection</a></li>
-                            <li><a href="default_007.html">Item</a></li>
+                            <li><a href="#">Sweater</a></li>
+                            <li><a href="default_007.html">Dress</a></li>
                         </ul>
                     </div>
 
                     <div class="navi_sub_3 navi_sub" style="display: none;">
                         <ul class="navi_sub_menu">
-                            <li><a href="request.html">NOTICE</a></li>
-                            <li><a href="default_008.html">Q&A</a></li>
+                            <li><a href="request.html">Notice</a></li>
+                            <li><a href="qa.html">Q&A</a></li>
                         </ul>
                     </div>
 
@@ -144,7 +91,7 @@
                 <ul>
                     <li><a href="/">HOME</a></li>
 
-                    <li><a href="default_011.html">SITEMAP</a></li>
+                    <li><a href="sitemap.html">SITEMAP</a></li>
                 </ul><!--L_TOP_GNB]]]--></div>
         </div>
     </div>
@@ -159,7 +106,7 @@
             <h2><img src="../images/leftmenu4.gif" alt="COMMUNITY"></h2>
             <ul class="subNavi">
                 <li>
-                    <a href="#"><img src="../images/left_4_1_on.gif" alt="CONTACT US"></a>
+                    <a href="#">Contact Us</a>
                 </li>
 
 
@@ -168,238 +115,17 @@
         <!--[[AREA_LEFT_END]]-->
         <!--[[AREA_BODY_START]]-->
         <div id="contents"><!--BODY[[[-->
-            <script type="text/javascript" src="../js/sky.form.checker.js"></script>
-            <script type="text/javascript">
-                // x
-                function init() {
-                    // submit
-                    $l($('submit'), 'click', onSubmit);
-                }
 
-                $load(init);
-
-                // submit
-                function onSubmit(evt, obj) {
-                    Event.stop(evt);
-                    var bbs_mode = obj.getAttribute('bbs_mode');
-                    var act = obj.getAttribute('act');
-                    $vset('page', 1);
-                    submitForm(bbs_mode, act);
-                }
-
-                function submitForm(bbs_mode, act) {
-                    var form = document.forms['dataForm'];
-                    if (act != null && typeof act != 'undefined') {
-                        form.elements['act'].value = act;
-                    }
-                    if (bbs_mode != null && typeof bbs_mode != 'undefined') {
-                        form.elements['bbs_mode'].value = bbs_mode;
-                    }
-
-                    form.submit();
-                }
-
-            </script>
-            <link href="../css/board_new.css" type="text/css" rel="stylesheet">
-            <style type="text/css">
-                /* Code tidied up by ScrapBook */
-                .site_navi {
-                    width: 100%;
-                    text-align: right;
-                    font-size: 11px;
-                    color: rgb(131, 131, 131);
-                    border-bottom: 1px solid rgb(221, 221, 221);
-                    padding-bottom: 7px;
-                }
-
-                .contents_sub {
-                    width: 100%;
-                    margin: 0px;
-                }
-
-                .contents_sub table {
-                    width: 100%;
-                }
-
-                .contents_sub table img {
-                    padding-top: 2px;
-                }
-
-                .board_top {
-                    width: 100%;
-                    overflow: hidden;
-                    margin-top: 45px;
-                }
-
-                .board_top .f_search {
-                    float: right;
-                    width: 380px;
-                    text-align: right;
-                }
-
-                .board_top .bold {
-                    float: left;
-                    width: 200px;
-                    margin: 10px 0px;
-                }
-
-                .board_title {
-                    font-size: 14px;
-                    font-weight: bold;
-                    color: rgb(0, 0, 0);
-                }
-
-                .coment_number {
-                    font: bold 10px verdana;
-                    color: rgb(111, 168, 0);
-                }
-
-                .board {
-                    width: 100%;
-                }
-
-                .board th {
-                    height: 41px;
-                    border-bottom: 1px solid rgb(218, 218, 218);
-                    background-color: rgb(249, 249, 251);
-                    color: rgb(70, 70, 70);
-                    font-weight: 600;
-                    overflow-wrap: break-word;
-                    border-top: 1px solid rgb(70, 70, 70);
-                    word-break: break-all;
-                }
-
-                .board td {
-                    height: 30px;
-                    border-bottom: 1px solid rgb(218, 218, 218);
-                    color: rgb(121, 121, 121);
-                    text-align: center;
-                    padding: 5px;
-                    overflow-wrap: break-word;
-                    word-break: break-all;
-                }
-
-                .board td.left {
-                    text-align: left;
-                }
-
-                .board td.category {
-                    font-weight: bold;
-                }
-
-                .board_input {
-                    border: 1px solid rgb(206, 206, 206);
-                    height: 24px;
-                    width: 160px;
-                }
-
-                .paginate_regular {
-                    padding: 10px 0px;
-                    text-align: center;
-                    line-height: normal;
-                }
-
-                .paginate_regular a, .paginate_regular strong {
-                    display: inline-block;
-                    position: relative;
-                    margin: 0px -2px;
-                    padding: 2px 8px;
-                    font-weight: 600;
-                    line-height: normal;
-                    text-decoration: none;
-                    vertical-align: middle;
-                }
-
-                .paginate_regular a:hover, .paginate_regular a:active, .paginate_regular a:focus {
-                    background-color: rgb(248, 248, 248);
-                }
-
-                .paginate_regular strong {
-                    color: rgb(255, 102, 0);
-                }
-
-                .paginate_regular .direction {
-                    font-weight: normal;
-                    color: rgb(118, 118, 118);
-                    white-space: nowrap;
-                }
-
-                .paginate_regular .direction span {
-                    font-weight: bold;
-                    font-size: 14px;
-                }
-
-                .paginate_regular .direction:hover, .paginate_regular .direction:active, .paginate_regular .direction:focus {
-                    background-color: rgb(255, 255, 255);
-                    color: rgb(51, 51, 51);
-                }
-
-                .btn_write {
-                    display: inline-block;
-                    background: rgb(95, 95, 95) none repeat scroll 0% 0%;
-                    border: 1px solid rgb(64, 65, 68);
-                    padding: 6px 17px 7px;
-                }
-
-                .btn_txt01 {
-                    color: rgb(255, 255, 255);
-                    font-weight: 600;
-                }
-
-                .btn_search {
-                    display: inline-block;
-                    color: rgb(51, 51, 51);
-                    padding: 4px 16px 6px 26px;
-                    background: rgba(0, 0, 0, 0) url("../images/btn/btn_search_bg.gif") no-repeat scroll 0px 0px;
-                }
-
-                .align_right {
-                    text-align: right;
-                    margin: 10px 0px;
-                    overflow: hidden;
-                }
-
-                .align_right button {
-                    float: right;
-                }
-
-                .tR {
-                    text-align: right;
-                }
-
-                .txt_blue {
-                    font-weight: bold;
-                    color: rgb(122, 181, 223);
-                }
-
-                .txt_orange {
-                    font: bold 12px verdana;
-                    color: rgb(255, 126, 0);
-                }
-            </style>
 
             <!-- 상단 디자인 -->
             <div class="con_title">
-                <p>HOME &gt; CONTACT US &gt; <strong>CONTACT US</strong></p>
-                <h3>CONTACT US</h3>
+                <p>HOME &gt; CONTACT US &gt; <strong>Contact Us</strong></p>
+                <h3>Contact Us</h3>
             </div>
             <div class="con_txt">
+                <div style="width:100%;height:550px;border:#ccc solid 1px;font-size:12px" id="map"></div>
                 <!-- * Daum 지도 - 지도퍼가기 --><!-- 1. 지도 노드 -->
-                <div class="root_daum_roughmap root_daum_roughmap_landing"
-                     id="daumRoughmapContainer1447647434655"></div>
-                <!-- 2. 설치 스크립트 * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다. -->
-                <script class="daum_roughmap_loader_script" src="../js/roughmapLoader.js" charset="UTF-8">
-
-                </script><!-- 3. 실행 스크립트 -->
-                <script charset="UTF-8">
-                    new daum.roughmap.Lander({
-                        "timestamp": "1447647434655",
-                        "key": "6pjm",
-                        "mapWidth": "740",
-                        "mapHeight": "350"
-                    }).render();
-                </script>
-                <ul>
+                <ul class="contact_info">
                     <li>
                         <p><span>주소 : </span>서울 구로구 구로동 디지털로34길 43(코오롱싸이언스밸리1차) 10층</p>
                     </li>
@@ -445,6 +171,53 @@
 </div>
 
 <div style="display: none;"></div>
+<script>
+</script>
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map('map');
+    var poi = new BMap.Point(113.26103,23.205536);
+    map.centerAndZoom(poi, 18);
+    map.enableScrollWheelZoom();
 
+    var content = '<div style="margin:0;line-height:20px;padding:2px;font-family: Microsoft YaHei;">' +
+        '<img src="http://developer.baidu.com/map/jsdemo/img/baidu.jpg" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
+        '地址：广州市白云区新市大浦北九社工业区帝宝大厦703室<br/>TEL：186-8049-2224<br/>简介：阿斯顿发生过是的冯绍峰爽肤水风水电费 双方都。' +
+        '</div>';
+
+    //创建检索信息窗口对象
+    var searchInfoWindow = null;
+    searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+        title  : "HL FASHION CHINA",      //标题
+        width  : 290,             //宽度
+        height : 105,              //高度
+        panel  : "panel",         //检索结果面板
+        enableAutoPan : true,     //自动平移
+        searchTypes   :[
+            BMAPLIB_TAB_SEARCH,   //周边检索
+            BMAPLIB_TAB_TO_HERE,  //到这里去
+            BMAPLIB_TAB_FROM_HERE //从这里出发
+        ]
+    });
+    var marker = new BMap.Marker(poi); //创建marker对象
+    marker.enableDragging(); //marker可拖拽
+    marker.addEventListener("click", function(e){
+        searchInfoWindow.open(marker);
+    })
+    map.addOverlay(marker); //在地图中添加marker
+    function addMapControl(){
+        var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+        scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+        map.addControl(scaleControl);
+        var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+        map.addControl(navControl);
+        var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+        map.addControl(overviewControl);
+    }
+    addMapControl();
+
+</script>
+
+</body>
 </body>
 </html>

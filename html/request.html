@@ -55,7 +55,7 @@
                                                         alt="PRODUCT" class="navi_main_obj" subcode="2"></a>
                         </li>
                         <li style="margin-left: 390px;">
-                            <a href="#"><img src="../images/navi_3.gif" oversrc="../images/navi_3_on.gif" alt="SHOP"
+                            <a href="#"><img src="../images/navi_3.gif" oversrc="../images/navi_3_on.gif" alt="REQUEST"
                                              class="navi_main_obj" subcode="3"></a>
                         </li>
                         <li>
@@ -70,15 +70,15 @@
 
                     <div class="navi_sub_2 navi_sub" style="display: none;">
                         <ul class="navi_sub_menu">
-                            <li><a href="product.html">Collection</a></li>
-                            <li><a href="default_007.html">Item</a></li>
+                            <li><a href="#">Sweater</a></li>
+                            <li><a href="default_007.html">Dress</a></li>
                         </ul>
                     </div>
 
                     <div class="navi_sub_3 navi_sub" style="display: none;">
                         <ul class="navi_sub_menu">
-                            <li><a href="#">NOTICE</a></li>
-                            <li><a href="default_008.html">Q&A</a></li>
+                            <li><a href="#">Notice</a></li>
+                            <li><a href="qa.html">Q&A</a></li>
                         </ul>
                     </div>
 
@@ -87,10 +87,10 @@
                 <!--//네비--><!--L_TOP_MENU]]]--></div>
             <div id="login"><!--L_TOP_GNB[[[-->
                 <ul>
-                   <li><a href="../index.html">HOME</a></li>
+                    <li><a href="../index.html">HOME</a></li>
 
 
-                    <li><a href="default_011.html">SITEMAP</a></li>
+                    <li><a href="sitemap.html">SITEMAP</a></li>
                 </ul><!--L_TOP_GNB]]]--></div>
         </div>
     </div>
@@ -102,13 +102,13 @@
     <div id="container">
         <!--[[AREA_LEFT_START]]-->
         <div id="leftmenu"><!--L_LEFT_MENU[[[--><!--서브메뉴-->
-            <h2><img src="../images/leftmenu3.gif" alt="SHOP"></h2>
+            <h2><img src="../images/leftmenu3.gif" alt="REQUEST"></h2>
             <ul class="subNavi">
                 <li>
-                    <a href="#"><img src="../images/left_4_1_on.gif" alt="Korea"></a>
+                    <a href="request.html" class="active">Notice</a>
                 </li>
                 <li>
-                    <a href="default_008.html"><img src="../images/left_3_2.gif" alt="Japan"></a>
+                    <a href="qa.html">Q&A</a>
                 </li>
             </ul>
             <!--//서브메뉴--><!--L_LEFT_MENU]]]--></div>
@@ -116,29 +116,99 @@
         <!--[[AREA_BODY_START]]-->
         <div id="contents"><!--BODY[[[-->
             <div class="con_title">
-                <p>HOME &gt; SHOP &gt; <strong>Korea</strong></p>
-                <h3>Korea</h3>
+                <p>HOME &gt; REQUEST &gt; <strong>Notice</strong></p>
+                <h3>Notice</h3>
             </div>
             <div class="con_txt">
-                <!------ 갤러리 ----->
-                <script type="text/javascript">
-                    mod.gallery.show({
-                        'objID': 'modGalleryArea' // 갤러리 영역의 'ID'를 입력하세요.
-                        ,
-                        "mode": "horizon",
-                        "caption": 1,
-                        "pagenum": 1,
-                        "pcode": "sub0301",
-                        "themaCanvas": "white",
-                        "themaCover": "white",
-                        "width": 740,
-                        "firstTab": "",
-                        "firstClip": "" // 환경설정 부분입니다.(수정, 삭제 금지)
-                    });
-                </script>
-                <div id="modGalleryArea" style="margin-top: 45px;"></div>
-                <!------ / 갤러리  ----->
-            </div><!--BODY]]]--></div>
+                <div class="contents_sub">
+
+                    <!--게시판-->
+                    <div class="board">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <th width="3%">&nbsp;</th>
+                                <th width="10%">序号</th>
+                                <th>标题</th>
+                                <th width="12%">作者</th>
+                                <th width="17%">发布时间</th>
+
+                                <th width="3%">&nbsp;</th>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>1</td>
+
+                                <td class="">
+                                    <a href="notice_nr.html">공지사항게시판입니다.</a>
+                                </td>
+                                <td>데모</td>
+                                <td>2015.11.16 13:11</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>2</td>
+
+                                <td class="">
+                                    <a href="notice_nr.html">공지사항게시판입니다.</a>
+                                </td>
+                                <td>데모</td>
+                                <td>2015.11.16 13:11</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>3</td>
+
+                                <td class="">
+                                    <a href="notice_nr.html">공지사항게시판입니다.</a>
+                                </td>
+                                <td>데모</td>
+                                <td>2015.11.16 13:11</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--페이지넘버-->
+                    <div class="align_right">
+                    </div>
+
+                    <div class="paginate_regular">
+                        <style type="text/css"><!--
+                        .board_pagetab {
+                            text-align: center;
+                        }
+
+                        .board_pagetab a {
+                            text-decoration: none;
+                            font: 12px verdana;
+                            color: #000;
+                            padding: 0 3px 0 3px;
+                        }
+
+                        .board_pagetab a:hover text-decoration:underline
+
+                        ;
+                        background-color:#f2f2f2
+
+                        ;
+                        }
+                        .on a {
+                            font-weight: bold;
+                        }
+
+                        --></style>
+                        <div class="board_pagetab" align="absmiddle"><span class="on"><a href="#">[ 1 ]</a></span></div>
+                    </div>
+                    <!--//페이지넘버-->
+                    <!--//게시판-->
+                </div>
+                <!-- 하단 디자인 -->
+            </div>
+            <!--BODY]]]--></div>
         <!--[[AREA_BODY_END]]-->
     </div>
     <!--[[AREA_BOTTOM_START]]-->
